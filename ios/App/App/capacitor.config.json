@@ -1,6 +1,6 @@
 {
   "appId": "com.eiraspire.app",
-  "appName": "EiraSpire",
+  "appName": "Eira Spire",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
