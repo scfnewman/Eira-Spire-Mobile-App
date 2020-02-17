@@ -1,0 +1,63 @@
+{
+	"Data": [
+		{
+			"ID": 0,
+			"Rank": 3,
+			"FirstName": "Stór",
+			"LastName": "Kynfæri",
+			"EarnedName": "Thrice Cut",
+			"Identity": "Business Owner",
+			"Age": 23,
+			"Gender": "Male",
+			"Lineage": "Human",
+			"Virtue": "Courage",
+			"Skills": [
+				"Battlemaster"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": "Stór grew up in the spire with his parents and his 3 brothers.  As the boldest of the brothers, Stór was the leader and often lead them into trouble with the local guards after causing mischief somewhere in the village.  Despite being a trouble maker, Stór never let his other brothers take the blame for his escapades.  In the years of his childhood, he ran the occasional errand for the family business but he grew older, he became a bigger part of the business and as such, now that he's an adult, he plays an active role in running the business and is set to inherit it in future.</p><p>After the invasion of Sermersuaq by the Jotun, Stór felt that he could not sit idly by and watch; so he joined the local guard to help fend off any potential invaders and to protect his family.  When it was announced that a group would be going down to the Anvil summit for the Autumn Equinox, Stór volunteered immediately so that he could help push back the Jotun.",
+				"NameStory": "Stór earned his name at the Anvil summit of the Autumn Equinox of 383YE.  As he endeavours to embody the virtue of Courage, Stór was first in line to help defend his home from the invading Jotun.  Unfortunately, being inexperienced in combat having only recently joined the Eira Spire guard, the Jotun proved to be dangerous foes for Stór and he found himself in the arms of a healer multiple times.  On three occasions throughout the summit, Stór left his left leg unguarded while in battle; the Jotun took advantage of the vulnerability and cleaved the leg, leaving Stór badly wounded.</p><p>If it were not for the honourable nature of the Jotun and his brave allies stepping in to protect him, Stór would have perished on the battlefield.  Despite the grievous injuries to his leg, Stór was resolute and returned to the battle the moment his leg had been repaired by the healers, although with an air of caution.  Around the fires of Wintermark near the end of the summit, Orvar and the other hall members told of Stór's misadventures in battle.  The scop Wulfmear \"Songsmith\" Dunwold of the Dunnings Hall named Stór \"Thrice Cut\" for his courage and determination to continue fighting despite his wounds."
+			}
+		},
+		{
+			"ID": 1,
+			"Rank": 0,
+			"FirstName": "Orvar",
+			"LastName": "Lurask",
+			"EarnedName": "The Protector",
+			"Identity": "Thane",
+			"Age": 25,
+			"Gender": "Male",
+			"Lineage": "Human",
+			"Virtue": "Pride",
+			"Skills": [
+				"Archery"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": "",
+				"NameStory": ""
+			}
+		},
+		{
+			"ID": 2,
+			"Rank": 1,
+			"FirstName": "Adelyn",
+			"LastName": "Lurask",
+			"EarnedName": "",
+			"Identity": "Head Advisor",
+			"Age": 24,
+			"Gender": "Female",
+			"Lineage": "Human",
+			"Virtue": "Prosperity",
+			"Skills": [
+				"Magician"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": ""
+			}
+		}
+	]
+}
