@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
 
-import { CharacterModal } from '../../components/character/character.component'
+import { CharacterModal } from 'src/app/modals/character/character.component'
+import { DataService } from 'src/app/services/data-service/data.service';
 
 @Component({
 	selector: 'app-characters',
@@ -10,16 +13,32 @@ import { CharacterModal } from '../../components/character/character.component'
 })
 export class CharactersPage implements OnInit {
 
-	constructor(
-		public _ModalController: ModalController
-	) { }
+	Characters;
 
-	ngOnInit() {
+	constructor(
+		public _ModalController: ModalController,
+		private _Http: HttpClient,
+		private _DataService: DataService
+	) {}
+
+	ngOnInit() 
+	{
+		this.GetData();
 	}
 
-	async PresentModal() {
+	async GetData()
+	{
+		this.Characters = JSON.parse(localStorage.getItem('CharacterData'));
+	}
+
+
+	async PresentModal(data) {
 		const Modal = await this._ModalController.create({
-			component: CharacterModal
+			component: CharacterModal,
+			swipeToClose: true,
+			componentProps: {
+				"Data": data
+			}
 		});
 		return Modal.present();
 	}

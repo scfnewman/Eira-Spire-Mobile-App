@@ -1,9 +1,50 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>characters</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Representatives</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+	<ion-slides *ngIf="Characters">
+		<ion-slide *ngFor="let _Character of Characters">
+			<ion-card (click)="PresentModal(_Character)">
+				<ion-card-header>
+					<ion-card-title>{{_Character.FirstName}} {{_Character.LastName}}</ion-card-title>
+					<ion-card-subtitle>{{_Character.EarnedName}}</ion-card-subtitle>
+				</ion-card-header>
+				<ion-card-content>
+					<ion-list>
+						<ion-item>
+							{{_Character.Identity}}
+						</ion-item>
+						<ion-item>
+							Age: {{_Character.Age}}
+						</ion-item>
+						<ion-item>
+							Gender: {{_Character.Gender}}
+						</ion-item>
+						<ion-item>
+							Virtue: {{_Character.Virtue}}
+						</ion-item>
+						<ion-item>
+							Lineage: {{_Character.Lineage}}
+						</ion-item>
+						<ion-item>
+							<ion-label text-wrap class="ion-text-wrap">
+								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills">
+									{{_Skill}}
+								</ion-chip>
+							</ion-label>
+						</ion-item>
+					</ion-list>
+					<p class="Description">
+						{{_Character.Summary}}
+					</p>
+				</ion-card-content>
+			</ion-card>
+		</ion-slide>
+	</ion-slides>
 </ion-content>
