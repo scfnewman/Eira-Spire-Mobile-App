@@ -17,11 +17,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { FirebaseConfig } from './../credentials';
+import { CharacterPipe } from './pipes/character.pipe';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CharacterModal,
+		CharacterPipe,
 	],
 	entryComponents: [
 		CharacterModal,
