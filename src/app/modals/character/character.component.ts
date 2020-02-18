@@ -1,24 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'CharacterModal',
-  templateUrl: './character.component.html',
-  styleUrls: ['./character.component.scss'],
+	selector: 'CharacterModal',
+	templateUrl: './character.component.html',
+	styleUrls: ['./character.component.scss'],
 })
 export class CharacterModal implements OnInit {
 
-  constructor(
-	  private _ModalController: ModalController
-  ) { }
+	@Input() Data: any;
 
-  ngOnInit() {}
+	constructor(
+		private _ModalController: ModalController
+	) { }
 
-  Dismiss()
-  {
-	  this._ModalController.dismiss({
-		  'dismissed': true
-	  });
-  }
+	ngOnInit() { }
+
+	Dismiss() {
+		this._ModalController.dismiss({
+			'dismissed': true
+		});
+	}
 
 }
