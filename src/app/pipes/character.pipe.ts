@@ -20,7 +20,7 @@ export class CharacterPipe implements PipeTransform {
 				if(Character.Retired) return Character;
 			}
 
-			if(Filter == "Representatives")
+			if(Filter == "Members")
 			{
 				if(Character.Rank < 5 && Character.Alive) return Character;
 			}
