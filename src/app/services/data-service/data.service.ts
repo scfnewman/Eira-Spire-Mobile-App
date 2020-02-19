@@ -12,6 +12,10 @@ export class DataService {
 		this._FireStore.collection<any>('characters').valueChanges().subscribe(data => {
 			let json = JSON.stringify(data);
 			localStorage.setItem('CharacterData', json);
+		});
+		this._FireStore.collection<any>('skills').valueChanges().subscribe(data => {
+			let json = JSON.stringify(data);
+			localStorage.setItem('SkillData', json);
 		});		
 	}
 }
