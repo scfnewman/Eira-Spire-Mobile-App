@@ -39,6 +39,14 @@ ion-card, ion-header {
 	border: 1px solid var(--ion-color-secondary-shade)!important;
 }
 
+ion-card {
+	display: flex;
+	flex-direction: column;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .logo {
 	background: url('./assets/icon/Spire-NoBackground.svg');
 }
