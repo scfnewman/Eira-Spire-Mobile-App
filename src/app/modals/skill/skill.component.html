@@ -1,3 +1,19 @@
-<p>
-  skill works!
-</p>
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button (click)="Dismiss()">Close</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title>{{Skill.Name}}</ion-card-title>
+			<ion-card-subtitle>Cost: {{Skill.Cost}}</ion-card-subtitle>
+		</ion-card-header>
+		<ion-card-content>
+			{{Skill.Description}}
+		</ion-card-content>
+	</ion-card>
+</ion-content>

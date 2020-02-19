@@ -1,14 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-skill',
-  templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.scss'],
+	selector: 'app-skill',
+	templateUrl: './skill.component.html',
+	styleUrls: ['./skill.component.scss'],
 })
-export class SkillComponent implements OnInit {
+export class SkillModal implements OnInit {
 
-  constructor() { }
+	Skills: Array<any>;
+	@Input() Data: any;
 
-  ngOnInit() {}
+	Skill;
+
+	constructor(
+		private _ModalController: ModalController
+	) { }
+
+	ngOnInit() 
+	{
+		this.GetData();
+	}
+
+	async GetData()
+	{
+		this.Skills = JSON.parse(localStorage.getItem('SkillData'));
+		this.Skills.filter(Skill => {
+			if(Skill.Name == this.Data.Name) this.Skill = Skill;
+		})
+	}
+
+	Dismiss() 
+	{
+		this._ModalController.dismiss({
+			'dismissed': true
+		});
+	}
 
 }
