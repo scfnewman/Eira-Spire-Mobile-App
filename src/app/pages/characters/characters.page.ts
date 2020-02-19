@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalController, IonSlides } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
@@ -15,6 +15,8 @@ import { DataService } from 'src/app/services/data-service/data.service';
 	styleUrls: ['./characters.page.scss'],
 })
 export class CharactersPage implements OnInit {
+
+	@ViewChild('Slides', {static: false}) Slides: IonSlides;
 
 	Characters;
 	PageTitle: string;
@@ -64,6 +66,11 @@ export class CharactersPage implements OnInit {
 		})
 
 		return Modal.present();
+	}
+
+	SlideTo(SlideNo)
+	{
+		this.Slides.slideTo(SlideNo);
 	}
 
 }

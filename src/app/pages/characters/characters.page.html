@@ -4,11 +4,30 @@
 			<ion-back-button defaultHref="/home"></ion-back-button>
 		</ion-buttons>
 		<ion-title>{{PageTitle}}</ion-title>
+		<ion-buttons slot="end">
+			<ion-button (click)="SlideTo(0)">Contents</ion-button>
+		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<ion-slides *ngIf="Characters">
+	<ion-slides *ngIf="Characters" #Slides>
+		<ion-slide style="text-align: left;">
+			<ion-card>
+				<ion-card-header>
+					<ion-card-title>
+						Contents
+					</ion-card-title>
+				</ion-card-header>
+				<ion-card-content>
+					<ion-list lines="none">
+						<ion-item *ngFor="let _Character of Characters | Character:PageTitle; index as i" (click)="SlideTo(i + 1)" detail="true">
+							{{_Character.FirstName}} <span *ngIf="_Character.EarnedName != ''">&nbsp;"{{_Character.EarnedName}}"&nbsp;</span> {{_Character.LastName}}
+						</ion-item>
+					</ion-list>
+				</ion-card-content>
+			</ion-card>
+		</ion-slide>
 		<ion-slide *ngFor="let _Character of Characters | Character:PageTitle">
 			<ion-card (click)="PresentCharacterModal(_Character)">
 				<ion-card-header>
@@ -34,7 +53,8 @@
 						</ion-item>
 						<ion-item>
 							<ion-label text-wrap class="ion-text-wrap" (click)="$event.stopPropagation()">
-								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills" (click)="PresentSkillModal(_Skill)">
+								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills"
+									(click)="PresentSkillModal(_Skill)">
 									{{_Skill.Name}}<span *ngIf="_Skill.Count > 1">&nbsp;x{{_Skill.Count}}</span>
 								</ion-chip>
 							</ion-label>
