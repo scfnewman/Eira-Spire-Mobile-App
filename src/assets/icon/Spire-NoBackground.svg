@@ -3,10 +3,6 @@
 		<style>.cls-1{fill:#00394e;}.cls-2{fill:#006083;}.cls-3{fill:#2f3d42;}.cls-4{fill:#e5ffff;}.cls-5{fill:#475a61;}.cls-6{fill:#5f6e74;}</style>
 	</defs>
 	<title>Spire</title>
-	<g id="Background">
-		<rect class="cls-1" width="512" height="1024"/>
-		<rect class="cls-2" x="512" width="512" height="1024"/>
-	</g>
 	<g id="Back">
 		<polygon class="cls-3" points="512 161 0 961.46 0 1024 1024 1024 1024 990.59 512 161"/>
 	</g>
