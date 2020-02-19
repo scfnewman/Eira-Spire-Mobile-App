@@ -1,16 +1,16 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
-			<ion-back-button></ion-back-button>
+			<ion-back-button defaultHref="/home"></ion-back-button>
 		</ion-buttons>
-		<ion-title>Representatives</ion-title>
+		<ion-title>{{PageTitle}}</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
 	<ion-slides *ngIf="Characters">
-		<ion-slide *ngFor="let _Character of Characters">
-			<ion-card (click)="PresentModal(_Character)">
+		<ion-slide *ngFor="let _Character of Characters | Character:PageTitle">
+			<ion-card (click)="PresentCharacterModal(_Character)">
 				<ion-card-header>
 					<ion-card-title>{{_Character.FirstName}} {{_Character.LastName}}</ion-card-title>
 					<ion-card-subtitle>{{_Character.EarnedName}}</ion-card-subtitle>
@@ -33,15 +33,18 @@
 							Lineage: {{_Character.Lineage}}
 						</ion-item>
 						<ion-item>
-							<ion-label text-wrap class="ion-text-wrap">
-								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills">
-									{{_Skill}}
+							<ion-label text-wrap class="ion-text-wrap" (click)="$event.stopPropagation()">
+								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills" (click)="PresentSkillModal(_Skill)">
+									{{_Skill.Name}}<span *ngIf="_Skill.Count > 1">&nbsp;x{{_Skill.Count}}</span>
 								</ion-chip>
 							</ion-label>
 						</ion-item>
 					</ion-list>
-					<p class="Description">
+					<p class="Description" *ngIf="_Character.Alive">
 						{{_Character.Summary}}
+					</p>
+					<p class="Description" *ngIf="!_Character.Alive">
+						{{_Character.DeathStory}}
 					</p>
 				</ion-card-content>
 			</ion-card>

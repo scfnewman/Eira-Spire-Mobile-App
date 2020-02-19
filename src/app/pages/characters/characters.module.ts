@@ -8,12 +8,15 @@ import { CharactersPageRoutingModule } from './characters-routing.module';
 
 import { CharactersPage } from './characters.page';
 
+import { PipesModule } from 'src/app/pipes/pipes.module'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CharactersPageRoutingModule
+	CharactersPageRoutingModule,
+	PipesModule
   ],
   declarations: [CharactersPage]
 })
