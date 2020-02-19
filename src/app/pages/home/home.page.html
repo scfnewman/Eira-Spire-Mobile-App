@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
 	<ion-toolbar>
 		<ion-title>
 			Home
@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-	<ion-card [routerLink]="'/characters'" routerDirection="forward">
+	<ion-card (click)="OpenCharactersPage('Representatives')">
 		<ion-card-header>
 			<ion-card-title>Representatives</ion-card-title>
 		</ion-card-header>
 	</ion-card>
 
-	<ion-card [routerLink]="'/characters'" routerDirection="forward">
+	<ion-card (click)="OpenCharactersPage('Associates')">
 		<ion-card-header>
 			<ion-card-title>Associates</ion-card-title>
 		</ion-card-header>
@@ -37,15 +37,9 @@
 		</ion-card-header>
 	</ion-card>
 
-	<ion-card [routerLink]="" routerDirection="forward">
+	<ion-card (click)="OpenCharactersPage('Fallen Heroes')">
 		<ion-card-header>
 			<ion-card-title>Fallen Heroes</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
-	<ion-card [routerLink]="" routerDirection="forward">
-		<ion-card-header>
-			<ion-card-title>Player Information</ion-card-title>
 		</ion-card-header>
 	</ion-card>
 </ion-content>

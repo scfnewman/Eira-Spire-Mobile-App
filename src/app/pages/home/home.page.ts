@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-home',
@@ -8,8 +9,18 @@ import { Component } from '@angular/core';
 export class HomePage {
 
 	constructor(
+		private _Router: Router
 	) {}
 
-	
+	OpenCharactersPage(Title)
+	{
+		let Extras: NavigationExtras = {
+			state: {
+				title: Title
+			}
+		}
+
+		this._Router.navigate(['/characters'], Extras);
+	}
 
 }
