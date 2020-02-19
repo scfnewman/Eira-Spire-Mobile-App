@@ -24,3 +24,23 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+* {
+	color:var(--ion-color-tertiary);
+	--background: var(--ion-color-secondary);
+}
+
+ion-content {
+	--background: var(--ion-color-secondary-shade);
+	--background: -webkit-linear-gradient(-45deg, var(--ion-color-secondary-shade) 0%,var(--ion-color-secondary) 33%,var(--ion-color-primary-shade) 66%,var(--ion-color-primary) 100%);
+}
+
+ion-card, ion-header {
+	border: 1px solid var(--ion-color-secondary-shade)!important;
+}
+
+.logo {
+	background: url('./assets/icon/Spire-NoBackground.svg');
+}
+
+
