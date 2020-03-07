@@ -19,16 +19,19 @@ import { CharacterModal } from './modals/character/character.component'
 import { SkillModal } from './modals/skill/skill.component'
 
 import { DataService } from './services/data-service/data.service'
+import { PageModal } from './modals/page/page.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CharacterModal,
-		SkillModal
+		SkillModal,
+		PageModal
 	],
 	entryComponents: [
 		CharacterModal,
-		SkillModal
+		SkillModal,
+		PageModal
 	],
 	imports: [
 		HttpClientModule,

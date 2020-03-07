@@ -17,5 +17,9 @@ export class DataService {
 			let json = JSON.stringify(data);
 			localStorage.setItem('SkillData', json);
 		});		
+		this._FireStore.collection<any>('pages').valueChanges().subscribe(data => {
+			let json = JSON.stringify(data);
+			localStorage.setItem('PageData', json);
+		});	
 	}
 }

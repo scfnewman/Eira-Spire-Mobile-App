@@ -19,27 +19,15 @@
 		</ion-card-header>
 	</ion-card>
 
-	<ion-card [routerLink]="'/history'" routerDirection="forward">
-		<ion-card-header>
-			<ion-card-title>History</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
-	<ion-card [routerLink]="" routerDirection="forward">
-		<ion-card-header>
-			<ion-card-title>Culture</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
-	<ion-card [routerLink]="" routerDirection="forward">
-		<ion-card-header>
-			<ion-card-title>The Mountain</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
 	<ion-card (click)="OpenCharactersPage('Fallen Heroes')">
 		<ion-card-header>
 			<ion-card-title>Fallen Heroes</ion-card-title>
+		</ion-card-header>
+	</ion-card>
+
+	<ion-card *ngFor="let _Category of Categories" (click)="OpenPagesPage(_Category)">
+		<ion-card-header>
+			<ion-card-title>{{_Category}}</ion-card-title>
 		</ion-card-header>
 	</ion-card>
 </ion-content>

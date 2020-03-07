@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button (click)="Dismiss()">Close</ion-button>
+		</ion-buttons>
+		<ion-title>{{Data.Title}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<ion-card-header>
+			<ion-card-title>{{Data.Title}}</ion-card-title>
+			<ion-card-subtitle *ngIf="Data.Subtitle != null">{{Data.Subtitle}}</ion-card-subtitle>
+		</ion-card-header>
+
+		<ion-card-content [innerHTML]="Data.Body"></ion-card-content>
+	</ion-card>
+
+	<ion-card *ngFor="let _Section of Data.Sections">
+		<ion-card-header>
+			<ion-card-title>
+				{{_Section.Heading}}
+			</ion-card-title>
+		</ion-card-header>
+
+		<ion-card-content [innerHTML]="_Section.Body"></ion-card-content>
+	</ion-card>
+</ion-content>

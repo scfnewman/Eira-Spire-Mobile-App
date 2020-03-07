@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,20 @@ import { NavigationExtras, Router } from '@angular/router';
 	templateUrl: 'home.page.html',
 	styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+
+	Pages: any;
+	Categories: string[] = [];
 
 	constructor(
 		private _Router: Router
-	) {}
+	) { }
 
-	OpenCharactersPage(Title)
-	{
+	ngOnInit() {
+		this.GetCategories();
+	}
+
+	OpenCharactersPage(Title) {
 		let Extras: NavigationExtras = {
 			state: {
 				title: Title
@@ -21,6 +27,25 @@ export class HomePage {
 		}
 
 		this._Router.navigate(['/characters'], Extras);
+	}
+
+	OpenPagesPage(Category) {
+		let Extras: NavigationExtras = {
+			state: {
+				category: Category
+			}
+		}
+
+		this._Router.navigate(['/pages'], Extras);
+	}
+
+	GetCategories() {
+		this.Pages = JSON.parse(localStorage.getItem('PageData'));
+
+		this.Pages.forEach(Page => {
+			if(!this.Categories.includes(Page.Category.trim()))
+				this.Categories.push(Page.Category);
+		});
 	}
 
 }
