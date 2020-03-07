@@ -36,7 +36,11 @@ ion-content {
 }
 
 ion-card, ion-header {
-	border: 1px solid var(--ion-color-secondary-shade)!important;
+	border: 1px solid var(--ion-color-secondary-shade);
+}
+
+ion-list {
+	background: none!important;
 }
 
 ion-card {
