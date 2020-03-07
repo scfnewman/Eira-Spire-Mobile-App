@@ -16,7 +16,7 @@ import { DataService } from 'src/app/services/data-service/data.service';
 })
 export class CharactersPage implements OnInit {
 
-	@ViewChild('Slides', {static: false}) Slides: IonSlides;
+	@ViewChild('Slides', { static: false }) Slides: IonSlides;
 
 	Characters;
 	PageTitle: string;
@@ -30,21 +30,18 @@ export class CharactersPage implements OnInit {
 	) {
 		_Route.queryParams.subscribe(params => {
 			this.PageTitle = _Router.getCurrentNavigation().extras.state.title
-		})		
+		})
 	}
 
-	ngOnInit() 
-	{
+	ngOnInit() {
 		this.GetData();
 	}
 
-	async GetData()
-	{
+	async GetData() {
 		this.Characters = JSON.parse(localStorage.getItem('CharacterData'));
 	}
 
-	async PresentCharacterModal(data) 
-	{
+	async PresentCharacterModal(data) {
 		const Modal = await this._ModalController.create({
 			component: CharacterModal,
 			swipeToClose: true,
@@ -55,8 +52,7 @@ export class CharactersPage implements OnInit {
 		return Modal.present();
 	}
 
-	async PresentSkillModal(data) 
-	{
+	async PresentSkillModal(data) {
 		const Modal = await this._ModalController.create({
 			component: SkillModal,
 			swipeToClose: true,
@@ -68,8 +64,7 @@ export class CharactersPage implements OnInit {
 		return Modal.present();
 	}
 
-	SlideTo(SlideNo)
-	{
+	SlideTo(SlideNo) {
 		this.Slides.slideTo(SlideNo);
 	}
 
