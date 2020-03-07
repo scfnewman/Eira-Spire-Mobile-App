@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Eira Spire</string>
+    <string name="title_activity_main">Eira Spire</string>
+    <string name="package_name">com.app.eiraspire</string>
+    <string name="custom_url_scheme">com.app.eiraspire</string>
+</resources>

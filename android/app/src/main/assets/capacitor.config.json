@@ -1,0 +1,13 @@
+{
+  "appId": "com.app.eiraspire",
+  "appName": "Eira Spire",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {},
+  "plugins": {
+	  "SplashScreen": {
+		  "launchShowDuration": 500
+	  }
+  }
+}
