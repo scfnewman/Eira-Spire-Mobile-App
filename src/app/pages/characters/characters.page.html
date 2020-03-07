@@ -22,7 +22,7 @@
 				<ion-card-content>
 					<ion-list lines="none">
 						<ion-item *ngFor="let _Character of Characters | Character:PageTitle; index as i" (click)="SlideTo(i + 1)" detail="true">
-							{{_Character.FirstName}} <span *ngIf="_Character.EarnedName != ''">&nbsp;"{{_Character.EarnedName}}"&nbsp;</span> {{_Character.LastName}}
+							{{_Character.FirstName}} <span *ngIf="_Character.EarnedName && _Character.EarnedName != ''">&nbsp;"{{_Character.EarnedName}}"&nbsp;</span> {{_Character.LastName}}
 						</ion-item>
 					</ion-list>
 				</ion-card-content>
@@ -60,11 +60,10 @@
 							</ion-label>
 						</ion-item>
 					</ion-list>
-					<p class="Description" *ngIf="_Character.Alive">
-						{{_Character.Summary}}
+					<p class="Description" *ngIf="_Character.Alive" [innerHTML]="_Character.Summary">
+						
 					</p>
-					<p class="Description" *ngIf="!_Character.Alive">
-						{{_Character.DeathStory}}
+					<p class="Description" *ngIf="!_Character.Alive" [innerHTML]="_Character.DeathStory">
 					</p>
 				</ion-card-content>
 			</ion-card>
