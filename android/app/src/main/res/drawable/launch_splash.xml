@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-    android:src="@drawable/splash"
-    android:scaleType="centerCrop"
-    />
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/ic_launcher_background"/>
+    <item
+        android:height="512px"
+        android:width="512px"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/logo"
+            android:tileMode="disabled"
+            />
+    </item>
+</layer-list>
