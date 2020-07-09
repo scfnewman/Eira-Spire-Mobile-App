@@ -13,25 +13,28 @@
 			<ion-card-subtitle>{{Data.Category}}</ion-card-subtitle>
 		</ion-card-header>
 		<ion-card-content>
-			<p [innerHTML]="Data.Definition"></p>
-
-			<ion-list>
-				<ion-item>
-					{{Data.Form}}
-				</ion-item>
-				<ion-item>
-					<div [innerHTML]="Data.Description"></div>
-				</ion-item>
-				<ion-item>
-					<div [innerHTML]="Data.RoleplayingEffect"></div>
-				</ion-item>
-				<ion-item>
-					<div [innerHTML]="Data.MechanicalEffect"></div>
-				</ion-item>
-				<ion-item>
-					<div [innerHTML]="Data.Recipe"></div>
-				</ion-item>
-			</ion-list>
+			<h2>Definition</h2>
+			<div class="Box" [innerHTML]="Data.Definition"></div>
+			<h2>Form</h2>
+			<div class="Box">
+				{{Data.Form}}
+			</div>
+			<h2>Description</h2>
+			<div class="Box">
+				<div [innerHTML]="Data.Description"></div>
+			</div>
+			<h2>Roleplaying Effect</h2>
+			<div class="Box">
+				<div [innerHTML]="Data.RoleplayingEffect"></div>
+			</div>
+			<h2>Mechanical Effect</h2>
+			<div class="Box">
+				<div [innerHTML]="Data.MechanicalEffect"></div>
+			</div>
+			<h2>Recipe</h2>
+			<div class="Box">
+				<div [innerHTML]="Data.Recipe"></div>
+			</div>
 		</ion-card-content>
 	</ion-card>
 
