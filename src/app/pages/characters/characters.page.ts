@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController, IonSlides } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
-import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { CharacterModal } from 'src/app/modals/character/character.component'
 import { SkillModal } from 'src/app/modals/skill/skill.component'
 
 import { DataService } from 'src/app/services/data-service/data.service';
+import { CharacterPotionsModal } from 'src/app/modals/character-potions/character-potions.component';
+import { CharacterSpellsModal } from 'src/app/modals/character-spells/character-spells.component';
 
 @Component({
 	selector: 'app-characters',
@@ -66,6 +67,55 @@ export class CharactersPage implements OnInit {
 
 	SlideTo(SlideNo) {
 		this.Slides.slideTo(SlideNo);
+	}
+
+	IsMagician(_Skills) : Boolean
+	{
+		if(_Skills && _Skills.filter(Skill => {
+			if(Skill.Name == "Magician") return Skill;
+		}).length > 0) return true;
+		return false;
+	}
+
+	IsApothecary(_Skills) : Boolean
+	{
+		if(_Skills && _Skills.filter(Skill => {
+			if(Skill.Name == "Apothecary") return Skill;
+		}).length > 0) return true;
+		return false;
+	}
+
+	GetRankString(Rank) {
+		if (Rank == 0) return 'Thane';
+		if (Rank == 1) return 'Head Advisor';
+		if (Rank == 2) return 'Stone Circle';
+		if (Rank == 3) return 'Guard';
+		if (Rank == 4) return 'Citizen';
+		if (Rank == 5) return 'Associate';
+	}
+
+	async ViewSpells(_Character) {
+		const Modal = await this._ModalController.create({
+			component: CharacterSpellsModal,
+			swipeToClose: true,
+			componentProps: {
+				Data: _Character
+			}
+		})
+
+		return Modal.present();
+	}
+
+	async ViewPotions(_Character) {
+		const Modal = await this._ModalController.create({
+			component: CharacterPotionsModal,
+			swipeToClose: true,
+			componentProps: {
+				Data: _Character
+			}
+		})
+
+		return Modal.present();
 	}
 
 }

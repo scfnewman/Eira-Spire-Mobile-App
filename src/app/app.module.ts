@@ -20,18 +20,30 @@ import { SkillModal } from './modals/skill/skill.component'
 
 import { DataService } from './services/data-service/data.service'
 import { PageModal } from './modals/page/page.component';
+import { CharacterPotionsModal } from './modals/character-potions/character-potions.component';
+import { PotionModal } from './modals/potion/potion.component';
+import { SpellModal } from './modals/spell/spell.component';
+import { CharacterSpellsModal } from './modals/character-spells/character-spells.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CharacterModal,
 		SkillModal,
-		PageModal
+		PageModal,
+		PotionModal,
+		SpellModal,
+		CharacterPotionsModal,
+		CharacterSpellsModal,
 	],
 	entryComponents: [
 		CharacterModal,
 		SkillModal,
-		PageModal
+		PageModal,
+		PotionModal,
+		SpellModal,
+		CharacterPotionsModal,
+		CharacterSpellsModal,
 	],
 	imports: [
 		HttpClientModule,

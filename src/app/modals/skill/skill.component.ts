@@ -17,21 +17,18 @@ export class SkillModal implements OnInit {
 		private _ModalController: ModalController
 	) { }
 
-	ngOnInit() 
-	{
+	ngOnInit() {
 		this.GetData();
 	}
 
-	async GetData()
-	{
+	async GetData() {
 		this.Skills = JSON.parse(localStorage.getItem('SkillData'));
 		this.Skills.filter(Skill => {
-			if(Skill.Name == this.Data.Name) this.Skill = Skill;
+			if (Skill.Name == this.Data.Name) this.Skill = Skill;
 		})
 	}
 
-	Dismiss() 
-	{
+	Dismiss() {
 		this._ModalController.dismiss({
 			'dismissed': true
 		});

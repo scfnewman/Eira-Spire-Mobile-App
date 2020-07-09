@@ -43,6 +43,9 @@
 							{{_Character.Identity}}
 						</ion-item>
 						<ion-item>
+							Rank: {{GetRankString(_Character.Rank)}}
+						</ion-item>
+						<ion-item>
 							Age: {{_Character.Age}}
 						</ion-item>
 						<ion-item>
@@ -55,12 +58,22 @@
 							Lineage: {{_Character.Lineage}}
 						</ion-item>
 						<ion-item>
-							<ion-label text-wrap class="ion-text-wrap" (click)="$event.stopPropagation()">
+							<div class="Skills" (click)="$event.stopPropagation()">
 								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills"
 									(click)="PresentSkillModal(_Skill)">
-									{{_Skill.Name}}<span *ngIf="_Skill.Count > 1">&nbsp;x{{_Skill.Count}}</span>
+									<ion-label>
+										{{_Skill.Name}}<span *ngIf="_Skill.Count > 1">&nbsp;x{{_Skill.Count}}</span>
+									</ion-label>
 								</ion-chip>
-							</ion-label>
+							</div>
+						</ion-item>
+						<ion-item *ngIf="IsApothecary(_Character.Skills) || IsMagician(_Character.Skills)">
+							<div class="Buttons" (click)="$event.stopPropagation()">
+								<ion-button *ngIf="IsMagician(_Character.Skills)" expand="block" (click)="ViewSpells(_Character)">View Spells
+								</ion-button>
+								<ion-button *ngIf="IsApothecary(_Character.Skills)" expand="block" (click)="ViewPotions(_Character)">View Potions
+								</ion-button>
+							</div>
 						</ion-item>
 					</ion-list>
 					<p class="Description" *ngIf="_Character.Alive" [innerHTML]="_Character.Summary"></p>

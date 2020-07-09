@@ -11,6 +11,30 @@ ion-list {
 	margin-bottom: 10px!important;
 }
 
+.Skills {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+
+	ion-chip {
+		min-width: 45%!important;
+		
+		ion-label {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
 .Description {
 	text-align: left;
+}
+
+.Buttons {
+	width: 100%;
+	min-width: 100%;
+	display: flex;
+	justify-content: space-evenly;
 }
