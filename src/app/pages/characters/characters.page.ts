@@ -49,7 +49,7 @@ export class CharactersPage implements OnInit {
 			component: CharacterModal,
 			swipeToClose: true,
 			componentProps: {
-				"Data": data
+				Data: data
 			}
 		});
 		return Modal.present();
@@ -60,7 +60,7 @@ export class CharactersPage implements OnInit {
 			component: SkillModal,
 			swipeToClose: true,
 			componentProps: {
-				"Data": data
+				Data: data
 			}
 		})
 

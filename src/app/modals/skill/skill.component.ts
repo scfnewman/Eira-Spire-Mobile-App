@@ -15,6 +15,15 @@ export class SkillModal implements OnInit {
 	) { }
 
 	ngOnInit() {
+		if (this.Data.Count)
+			this.GetData()
+	}
+
+	GetData() {
+		let Skills: any[] = JSON.parse(localStorage.getItem('SkillData'))
+		this.Data = Skills.find(Skill => {
+			if(Skill.Name == this.Data.Name) return Skill;
+		})
 	}
 
 	Dismiss() {
