@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
 import { Plugins, StatusBarStyle } from '@capacitor/core'
-import { DataService } from './services/data-service/data.service';
+import { DataService } from './services/data.service';
 
 const { SplashScreen, StatusBar } = Plugins
 

@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CharacterModal } from 'src/app/modals/character/character.component'
 import { SkillModal } from 'src/app/modals/skill/skill.component'
 
-import { DataService } from 'src/app/services/data-service/data.service';
+import { DataService } from 'src/app/services/data.service';
 import { CharacterPotionsModal } from 'src/app/modals/character-potions/character-potions.component';
 import { CharacterSpellsModal } from 'src/app/modals/character-spells/character-spells.component';
 

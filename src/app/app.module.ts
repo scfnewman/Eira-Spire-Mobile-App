@@ -17,17 +17,26 @@ import { FirebaseConfig } from './../credentials';
 
 import { CharacterModal } from './modals/character/character.component'
 import { SkillModal } from './modals/skill/skill.component'
-
-import { DataService } from './services/data-service/data.service'
 import { PageModal } from './modals/page/page.component';
 import { CharacterPotionsModal } from './modals/character-potions/character-potions.component';
 import { PotionModal } from './modals/potion/potion.component';
 import { SpellModal } from './modals/spell/spell.component';
 import { CharacterSpellsModal } from './modals/character-spells/character-spells.component';
 
+import { DataService } from './services/data.service'
+import { PipesModule } from './pipes/pipes.module';
+
+// Pages
+import { HomePage } from './pages/home/home.page';
+import { CharactersPage } from './pages/characters/characters.page';
+import { PagesPage } from './pages/pages/pages.page';
+
 @NgModule({
 	declarations: [
 		AppComponent,
+		HomePage,
+		CharactersPage,
+		PagesPage,
 		CharacterModal,
 		SkillModal,
 		PageModal,
@@ -37,6 +46,9 @@ import { CharacterSpellsModal } from './modals/character-spells/character-spells
 		CharacterSpellsModal,
 	],
 	entryComponents: [
+		HomePage,
+		CharactersPage,
+		PagesPage,
 		CharacterModal,
 		SkillModal,
 		PageModal,
@@ -51,7 +63,8 @@ import { CharacterSpellsModal } from './modals/character-spells/character-spells
 		IonicModule.forRoot(), 
 		AppRoutingModule,
 		AngularFireModule.initializeApp(FirebaseConfig),
-		AngularFirestoreModule
+		AngularFirestoreModule,
+		PipesModule
 	],
 	providers: [
 		StatusBar,

@@ -31,8 +31,8 @@
 }
 
 ion-content {
-	--background: var(--ion-color-secondary-shade);
-	--background: -webkit-linear-gradient(-45deg, var(--ion-color-secondary-shade) 0%,var(--ion-color-secondary) 33%,var(--ion-color-primary-shade) 66%,var(--ion-color-primary) 100%);
+	//--background: var(--ion-color-secondary-shade);
+	//--background: -webkit-linear-gradient(-45deg, var(--ion-color-secondary-shade) 0%,var(--ion-color-secondary) 33%,var(--ion-color-primary-shade) 66%,var(--ion-color-primary) 100%);
 }
 
 ion-card, ion-header {
@@ -41,6 +41,10 @@ ion-card, ion-header {
 
 ion-list {
 	background: none!important;
+}
+
+ion-button {
+	color: var(--ion-color-tertiary)!important;
 }
 
 ion-card {
