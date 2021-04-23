@@ -57,5 +57,4 @@ export class HomePage implements OnInit {
 				this.Categories.push(Page.Category);
 		});
 	}
-
 }

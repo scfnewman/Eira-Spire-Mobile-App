@@ -39,5 +39,11 @@ export class DataService {
 				localStorage.setItem('SpellData', json);
 			}
 		});
+		this._FireStore.collection<any>('assets').valueChanges().subscribe(data => {
+			if (data) {
+				let json = JSON.stringify(data);
+				localStorage.setItem('AssetData', json);
+			}
+		})
 	}
 }

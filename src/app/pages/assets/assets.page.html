@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>Assets</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row *ngFor="let _Asset of Assets">
+			<ion-col>{{_Asset.Name}}</ion-col>
+			<ion-col size="1">{{_Asset.Count}}</ion-col>
+			<ion-col>{{_Asset.Dimensions}}</ion-col>
+			<ion-col>{{_Asset.Owner}}</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	</ion-toolbar>
+</ion-footer>

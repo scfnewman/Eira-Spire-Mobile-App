@@ -47,31 +47,11 @@
 						Spells
 					</div>
 				</ion-col>
+
+				<ion-col size="6" [routerLink]="['/assets']">
+					<div>Assets</div>
+				</ion-col>
 			</ion-row>
 		</ion-grid>
-
-		<!-- <ion-card (click)="OpenCharactersPage('Members')">
-		<ion-card-header>
-			<ion-card-title>Members</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
-	<ion-card (click)="OpenCharactersPage('Associates')">
-		<ion-card-header>
-			<ion-card-title>Associates</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
-	<ion-card (click)="OpenCharactersPage('Fallen Heroes')">
-		<ion-card-header>
-			<ion-card-title>Fallen Heroes</ion-card-title>
-		</ion-card-header>
-	</ion-card>
-
-	<ion-card *ngFor="let _Category of Categories" (click)="OpenPagesPage(_Category)">
-		<ion-card-header>
-			<ion-card-title>{{_Category}}</ion-card-title>
-		</ion-card-header>
-	</ion-card> -->
 	</div>
 </ion-content>

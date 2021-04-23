@@ -10,9 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FirebaseConfig } from './../credentials';
 
 import { CharacterModal } from './modals/character/character.component'
@@ -22,6 +24,7 @@ import { CharacterPotionsModal } from './modals/character-potions/character-poti
 import { PotionModal } from './modals/potion/potion.component';
 import { SpellModal } from './modals/spell/spell.component';
 import { CharacterSpellsModal } from './modals/character-spells/character-spells.component';
+import { LoginModal } from './modals/login/login.component';
 
 import { DataService } from './services/data.service'
 import { PipesModule } from './pipes/pipes.module';
@@ -31,6 +34,9 @@ import { HomePage } from './pages/home/home.page';
 import { CharactersPage } from './pages/characters/characters.page';
 import { PagesPage } from './pages/pages/pages.page';
 import { SkillsPage } from './pages/skills/skills.page';
+import { AssetsPage } from './pages/assets/assets.page';
+
+
 
 @NgModule({
 	declarations: [
@@ -40,6 +46,7 @@ import { SkillsPage } from './pages/skills/skills.page';
 		PagesPage,
 		CharacterModal,
 		SkillsPage,
+		AssetsPage,
 
 		SkillModal,
 		PageModal,
@@ -47,6 +54,7 @@ import { SkillsPage } from './pages/skills/skills.page';
 		SpellModal,
 		CharacterPotionsModal,
 		CharacterSpellsModal,
+		LoginModal
 	],
 	entryComponents: [
 		HomePage,
@@ -54,6 +62,7 @@ import { SkillsPage } from './pages/skills/skills.page';
 		PagesPage,
 		CharacterModal,
 		SkillsPage,
+		AssetsPage,
 		
 		SkillModal,
 		PageModal,
@@ -61,6 +70,7 @@ import { SkillsPage } from './pages/skills/skills.page';
 		SpellModal,
 		CharacterPotionsModal,
 		CharacterSpellsModal,
+		LoginModal
 	],
 	imports: [
 		HttpClientModule,
@@ -69,7 +79,10 @@ import { SkillsPage } from './pages/skills/skills.page';
 		AppRoutingModule,
 		AngularFireModule.initializeApp(FirebaseConfig),
 		AngularFirestoreModule,
-		PipesModule
+		AngularFireAuthModule,
+		PipesModule,
+		FormsModule,
+		ReactiveFormsModule
 	],
 	providers: [
 		StatusBar,
