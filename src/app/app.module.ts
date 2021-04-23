@@ -30,6 +30,7 @@ import { PipesModule } from './pipes/pipes.module';
 import { HomePage } from './pages/home/home.page';
 import { CharactersPage } from './pages/characters/characters.page';
 import { PagesPage } from './pages/pages/pages.page';
+import { SkillsPage } from './pages/skills/skills.page';
 
 @NgModule({
 	declarations: [
@@ -38,6 +39,8 @@ import { PagesPage } from './pages/pages/pages.page';
 		CharactersPage,
 		PagesPage,
 		CharacterModal,
+		SkillsPage,
+
 		SkillModal,
 		PageModal,
 		PotionModal,
@@ -50,6 +53,8 @@ import { PagesPage } from './pages/pages/pages.page';
 		CharactersPage,
 		PagesPage,
 		CharacterModal,
+		SkillsPage,
+		
 		SkillModal,
 		PageModal,
 		PotionModal,
@@ -59,8 +64,8 @@ import { PagesPage } from './pages/pages/pages.page';
 	],
 	imports: [
 		HttpClientModule,
-		BrowserModule, 
-		IonicModule.forRoot(), 
+		BrowserModule,
+		IonicModule.forRoot(),
 		AppRoutingModule,
 		AngularFireModule.initializeApp(FirebaseConfig),
 		AngularFirestoreModule,

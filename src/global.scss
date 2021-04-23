@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -26,25 +26,34 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 * {
-	color:var(--ion-color-tertiary);
+	color: var(--ion-color-tertiary);
 	--background: var(--ion-color-secondary);
 }
 
-ion-content {
+ion-content, ion-footer {
+	--background: var(--ion-color-secondary);
 	//--background: var(--ion-color-secondary-shade);
 	//--background: -webkit-linear-gradient(-45deg, var(--ion-color-secondary-shade) 0%,var(--ion-color-secondary) 33%,var(--ion-color-primary-shade) 66%,var(--ion-color-primary) 100%);
 }
 
-ion-card, ion-header {
+ion-searchbar {
+	background: var(--ion-color-secondary)!important;
+	box-shadow: none;
+}
+
+ion-card,
+ion-header {
 	border: 1px solid var(--ion-color-secondary-shade);
+
+	ion-buttons {
+		ion-button {
+			--color: var(--ion-color-tertiary);
+		}
+	}
 }
 
 ion-list {
-	background: none!important;
-}
-
-ion-button {
-	color: var(--ion-color-tertiary)!important;
+	background: none !important;
 }
 
 ion-card {
@@ -56,7 +65,46 @@ ion-card {
 }
 
 .logo {
-	background: url('./assets/icon/Spire-NoBackground.svg');
+	background: url("./assets/icon/Spire-NoBackground.svg");
 }
 
+.gold {
+	color: gold;
+}
 
+.right {
+	text-align: right;
+	float: right;
+	margin-left: auto;
+}
+
+h1 {
+	margin: 20px auto 0;
+}
+
+h2 {
+	font-size: 0.9rem;
+	margin: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--ion-color-primary-tint);
+}
+
+h3 {
+	font-size: 0.7rem;
+	margin: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--ion-color-secondary-tint);
+}
+
+.page {
+	width: 100%;
+	padding: 15px;
+
+	p {
+		&.hidden {
+			display: none;
+		}
+	}
+}

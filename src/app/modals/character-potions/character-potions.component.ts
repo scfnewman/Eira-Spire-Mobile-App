@@ -12,6 +12,8 @@ export class CharacterPotionsModal implements OnInit {
 	Potions: Array<any>;
 	@Input() Data: any;
 
+	Search;
+
 	constructor(
 		private _ModalController: ModalController
 	) { }

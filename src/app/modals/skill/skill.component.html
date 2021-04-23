@@ -3,17 +3,19 @@
 		<ion-buttons slot="start">
 			<ion-button (click)="Dismiss()">Close</ion-button>
 		</ion-buttons>
+		<ion-title>{{Data.Name}}</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<ion-card>
-		<ion-card-header>
-			<ion-card-title>{{Skill.Name}}</ion-card-title>
-			<ion-card-subtitle>{{Skill.Category}} | Cost: {{Skill.Cost}} Experience</ion-card-subtitle>
-		</ion-card-header>
-		<ion-card-content>
-			{{Skill.Description}}
-		</ion-card-content>
-	</ion-card>
+	<div class="page">
+		<h1>{{Data.Name}}</h1>
+		<h2>{{Data.Category}}</h2>
+		<h3>{{Data.Cost}} Experience Point{{Data.Cost > 1 ? 's' : ''}}</h3>
+
+		<section>
+			<h1>Description</h1>
+			<p [innerHTML]="Data.Description"></p>
+		</section>
+	</div>
 </ion-content>

@@ -39,6 +39,16 @@ export class HomePage implements OnInit {
 		this._Router.navigate(['/pages'], Extras);
 	}
 
+	OpenSkillsPage(Skill) {
+		let Extras: NavigationExtras = {
+			state: {
+				skill: Skill
+			}
+		}
+
+		this._Router.navigate(['/skills'], Extras);
+	}
+
 	GetCategories() {
 		this.Pages = JSON.parse(localStorage.getItem('PageData'));
 

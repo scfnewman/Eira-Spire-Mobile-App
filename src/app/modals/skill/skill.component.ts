@@ -8,24 +8,13 @@ import { ModalController } from '@ionic/angular';
 })
 export class SkillModal implements OnInit {
 
-	Skills: Array<any>;
 	@Input() Data: any;
-
-	Skill;
 
 	constructor(
 		private _ModalController: ModalController
 	) { }
 
 	ngOnInit() {
-		this.GetData();
-	}
-
-	async GetData() {
-		this.Skills = JSON.parse(localStorage.getItem('SkillData'));
-		this.Skills.filter(Skill => {
-			if (Skill.Name == this.Data.Name) this.Skill = Skill;
-		})
 	}
 
 	Dismiss() {

@@ -7,43 +7,69 @@
 </ion-header>
 
 <ion-content>
-	<ion-card>
-		<ion-card-header>
-			<ion-card-title>{{Data.Name}}</ion-card-title>
-			<ion-card-subtitle>{{Data.Category}}</ion-card-subtitle>
-		</ion-card-header>
-		<ion-card-content>
-			<h2>Definition</h2>
-			<div class="Box" [innerHTML]="Data.Definition"></div>
-			<h2>Form</h2>
-			<div class="Box">
-				{{Data.Form}}
-			</div>
-			<h2>Description</h2>
-			<div class="Box">
-				<div [innerHTML]="Data.Description"></div>
-			</div>
-			<h2>Roleplaying Effect</h2>
-			<div class="Box">
-				<div [innerHTML]="Data.RoleplayingEffect"></div>
-			</div>
-			<h2>Mechanical Effect</h2>
-			<div class="Box">
-				<div [innerHTML]="Data.MechanicalEffect"></div>
-			</div>
-			<h2>Recipe</h2>
-			<div class="Box">
-				<div [innerHTML]="Data.Recipe"></div>
-			</div>
-		</ion-card-content>
-	</ion-card>
+	<div class="page">
+		<h1>{{Data.Name}}</h1>
+		<h2>{{Data.Category}}</h2>
+		<h3>{{Data.Form}}</h3>
 
+		<section *ngIf="Data.Definition">
+			<h1>Definition
+				<span class="right">
+					<ion-icon *ngIf="!HideDefinition" (click)="HideDefinition = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideDefinition" (click)="HideDefinition = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Definition" [class]="HideDefinition ? 'hidden' : ''"></p>
+		</section>
 
-	<ion-card *ngIf="Data.Notes">
-		<ion-card-header>
-			<ion-card-title>Notes</ion-card-title>
-		</ion-card-header>
-		<ion-card-content [innerHTML]="Data.Notes">
-		</ion-card-content>
-	</ion-card>
+		<section *ngIf="Data.Description">
+			<h1>Description
+				<span class="right">
+					<ion-icon *ngIf="!HideDescription" (click)="HideDescription = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideDescription" (click)="HideDescription = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Description" [class]="HideDescription ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngIf="Data.RoleplayingEffect">
+			<h1>Roleplaying Effect
+				<span class="right">
+					<ion-icon *ngIf="!HideRoleplayingEffect" (click)="HideRoleplayingEffect = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideRoleplayingEffect" (click)="HideRoleplayingEffect = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.RoleplayingEffect" [class]="HideRoleplayingEffect ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngIf="Data.MechanicalEffect">
+			<h1>Mechanical Effect
+				<span class="right">
+					<ion-icon *ngIf="!HideMechanicalEffect" (click)="HideMechanicalEffect = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideMechanicalEffect" (click)="HideMechanicalEffect = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.MechanicalEffect" [class]="HideMechanicalEffect ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngIf="Data.Recipe">
+			<h1>Recipe
+				<span class="right">
+					<ion-icon *ngIf="!HideRecipe" (click)="HideRecipe = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideRecipe" (click)="HideRecipe = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Recipe" [class]="HideRecipe ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngIf="Data.Notes">
+			<h1>Notes
+				<span class="right">
+					<ion-icon *ngIf="!HideNotes" (click)="HideNotes = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideNotes" (click)="HideNotes = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Notes" [class]="HideNotes ? 'hidden' : ''"></p>
+		</section>
+	</div>
 </ion-content>

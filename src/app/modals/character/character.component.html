@@ -8,30 +8,58 @@
 </ion-header>
 
 <ion-content>
-	<ion-card>
-		<ion-card-header>
-			<ion-card-title>Background</ion-card-title>
-		</ion-card-header>
-		<ion-card-content>
-			<p [innerHTML]="Data.Details.Background"></p>
-		</ion-card-content>
-	</ion-card>
+	<div class="page">
+		<h1>{{Data.FirstName}} {{Data.LastName}}</h1>
+		<h2 [class]="Data.EarnedName ? 'gold' : ''">{{Data.EarnedName ? Data.EarnedName : Data.Identity}}</h2>
 
-	<ion-card *ngIf="Data.EarnedName">
-		<ion-card-header>
-			<ion-card-title>{{Data.EarnedName}}</ion-card-title>
-		</ion-card-header>
-		<ion-card-content>
-			<p [innerHTML]="Data.Details.NameStory"></p>
-		</ion-card-content>
-	</ion-card>
+		<section *ngIf="Data.Summary">
+			<h1>Summary
+				<span class="right">
+					<ion-icon *ngIf="!HideSummary" (click)="HideSummary = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideSummary" (click)="HideSummary = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Summary" [class]="HideSummary ? 'hidden' : ''"></p>
+		</section>
 
-	<ion-card *ngFor="let _Section of Data.Sections">
-		<ion-card-header>
-			<ion-card-title>{{_Section.Heading}}</ion-card-title>
-		</ion-card-header>
-		<ion-card-content>
-			<p [innerHTML]="_Section.Body"></p>
-		</ion-card-content>
-	</ion-card>
+		<section *ngIf="Data.DeathStory">
+			<h1>Death
+				<span class="right">
+					<ion-icon *ngIf="!HideDeath" (click)="HideDeath = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideDeath" (click)="HideDeath = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Death" [class]="HideDeath ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngIf="Data.Details.Background">
+			<h1>Background
+				<span class="right">
+					<ion-icon *ngIf="!HideBackground" (click)="HideBackground = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideBackground" (click)="HideBackground = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Details.Background" [class]="HideBackground ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngIf="Data.EarnedName">
+			<h1 class="gold">{{Data.EarnedName}}
+				<span class="right">
+					<ion-icon *ngIf="!HideEarnedName" (click)="HideEarnedName = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideEarnedName" (click)="HideEarnedName = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="Data.Details.NameStory" [class]="HideEarnedName ? 'hidden' : ''"></p>
+		</section>
+
+		<section *ngFor="let _Section of Data.Sections; index as i">
+			<h1>{{_Section.Heading}}
+				<span class="right">
+					<ion-icon *ngIf="!HideSections[i]" (click)="HideSections[i] = true" name="chevron-up"></ion-icon>
+					<ion-icon *ngIf="HideSections[i]" (click)="HideSections[i] = false" name="chevron-down"></ion-icon>
+				</span>
+			</h1>
+			<p [innerHTML]="_Section.Body" [class]="HideSections[i] ? 'hidden' : ''"></p>
+		</section>
+	</div>
 </ion-content>

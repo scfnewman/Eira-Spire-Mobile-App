@@ -13,6 +13,8 @@ export class PagesPage implements OnInit {
 	Category: string;
 	Pages: any;
 
+	Search: string;
+
 	constructor(
 		public _ModalController: ModalController,
 		private _Route: ActivatedRoute,

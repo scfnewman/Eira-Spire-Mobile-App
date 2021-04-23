@@ -10,14 +10,17 @@ export class PageModal implements OnInit {
 
 	@Input() Data;
 
+	HideSections: boolean[] = [];
+
 	constructor(
 		private _ModalCtrl: ModalController
 	) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.Data.Sections.forEach(() => this.HideSections.push(false));
+	}
 
-	Dismiss()
-	{
+	Dismiss() {
 		this._ModalCtrl.dismiss();
 	}
 

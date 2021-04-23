@@ -12,6 +12,8 @@ export class CharacterSpellsModal implements OnInit {
 	Spells: Array<any>;
 	@Input() Data: any;
 
+	Search: string;
+
 	constructor(
 		private _ModalController: ModalController
 	) { }

@@ -1,40 +1,61 @@
-ion-card-subtitle {
-	min-height: 15px;
-	margin-bottom: 4px;
-}
+ion-slide {
+	height: 100%;
 
-ion-item {
-	--padding-start: 0px;
-}
+	.contents {
+		p {
+			margin: 0;
+			line-height: 0.7rem;
+		}
 
-ion-list {
-	margin-bottom: 10px!important;
-}
-
-.Skills {
-	display: flex;
-	flex-flow: wrap;
-	justify-content: center;
-	align-items: flex-start;
-	width: 100%;
-
-	ion-chip {
-		min-width: 45%!important;
-		
-		ion-label {
-			width: 100%;
-			text-align: center;
+		.gold {
+			font-size: 0.7rem;
+			font-weight: bold;
+			text-transform: uppercase;
 		}
 	}
-}
 
-.Description {
-	text-align: left;
-}
+	.page {
 
-.Buttons {
-	width: 100%;
-	min-width: 100%;
-	display: flex;
-	justify-content: space-evenly;
+		ion-list {
+			margin-bottom: 10px !important;
+
+			ion-item {
+				--padding-start: 0px;
+			}
+		}
+
+		.Skills {
+			display: flex;
+			flex-flow: wrap;
+			justify-content: center;
+			align-items: flex-start;
+			width: 100%;
+
+			ion-chip {
+				min-width: 45% !important;
+				border: 1px solid var(--ion-color-primary);
+
+				ion-label {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+
+		.Description {
+			text-align: left;
+		}
+
+		.Buttons {
+			width: 100%;
+			min-width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+		}
+
+		ion-button {
+			border: 1px solid var(--ion-color-primary);
+			font-weight: bold;
+		}
+	}
 }

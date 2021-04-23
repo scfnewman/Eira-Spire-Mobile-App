@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CharactersPage } from './pages/characters/characters.page';
 import { HomePage } from './pages/home/home.page';
 import { PagesPage } from './pages/pages/pages.page';
+import { SkillsPage } from './pages/skills/skills.page';
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,10 @@ const routes: Routes = [
 	{
 		path: 'pages',
 		component: PagesPage
+	},
+	{
+		path: 'skills',
+		component: SkillsPage
 	}
 ];
 

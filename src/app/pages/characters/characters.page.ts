@@ -22,6 +22,8 @@ export class CharactersPage implements OnInit {
 	Characters;
 	PageTitle: string;
 
+	Search: string;
+
 	constructor(
 		public _ModalController: ModalController,
 		private _Http: HttpClient,
@@ -69,18 +71,16 @@ export class CharactersPage implements OnInit {
 		this.Slides.slideTo(SlideNo);
 	}
 
-	IsMagician(_Skills) : Boolean
-	{
-		if(_Skills && _Skills.filter(Skill => {
-			if(Skill.Name == "Magician") return Skill;
+	IsMagician(_Skills): Boolean {
+		if (_Skills && _Skills.filter(Skill => {
+			if (Skill.Name == "Magician") return Skill;
 		}).length > 0) return true;
 		return false;
 	}
 
-	IsApothecary(_Skills) : Boolean
-	{
-		if(_Skills && _Skills.filter(Skill => {
-			if(Skill.Name == "Apothecary") return Skill;
+	IsApothecary(_Skills): Boolean {
+		if (_Skills && _Skills.filter(Skill => {
+			if (Skill.Name == "Apothecary") return Skill;
 		}).length > 0) return true;
 		return false;
 	}
@@ -117,5 +117,4 @@ export class CharactersPage implements OnInit {
 
 		return Modal.present();
 	}
-
 }

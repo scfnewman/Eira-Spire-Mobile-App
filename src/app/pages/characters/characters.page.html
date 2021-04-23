@@ -12,74 +12,77 @@
 
 <ion-content>
 	<ion-slides *ngIf="Characters" #Slides>
-		<ion-slide style="text-align: left;">
-			<ion-card>
-				<ion-card-header>
-					<ion-card-title>
-						Contents
-					</ion-card-title>
-				</ion-card-header>
-				<ion-card-content>
-					<ion-list lines="none">
-						<ion-item *ngFor="let _Character of Characters | Character:PageTitle; index as i"
-							(click)="SlideTo(i + 1)" detail="true">
-							{{_Character.FirstName}} <span
-								*ngIf="_Character.EarnedName && _Character.EarnedName != ''">&nbsp;"{{_Character.EarnedName}}"&nbsp;</span>
-							{{_Character.LastName}}
-						</ion-item>
-					</ion-list>
-				</ion-card-content>
-			</ion-card>
+		<ion-slide>
+			<div class="page contents">
+				<h1>Contents</h1>
+
+				<ion-list lines="none">
+					<ion-item
+						*ngFor="let _Character of Characters | Character:{page: PageTitle, search: Search}; index as i"
+						(click)="SlideTo(i + 1)" detail="true">
+						<div>
+							<p>{{_Character.FirstName}} {{_Character.LastName}}
+								<span *ngIf="_Character.EarnedName" class="gold"><br>{{_Character.EarnedName}}</span>
+							</p>
+						</div>
+					</ion-item>
+				</ion-list>
+			</div>
 		</ion-slide>
-		<ion-slide *ngFor="let _Character of Characters | Character:PageTitle">
-			<ion-card (click)="PresentCharacterModal(_Character)">
-				<ion-card-header>
-					<ion-card-title>{{_Character.FirstName}} {{_Character.LastName}}</ion-card-title>
-					<ion-card-subtitle>{{_Character.EarnedName}}</ion-card-subtitle>
-				</ion-card-header>
-				<ion-card-content>
-					<ion-list>
-						<ion-item>
-							{{_Character.Identity}}
-						</ion-item>
-						<ion-item>
-							Rank: {{GetRankString(_Character.Rank)}}
-						</ion-item>
-						<ion-item>
-							Age: {{_Character.Age}}
-						</ion-item>
-						<ion-item>
-							Gender: {{_Character.Gender}}
-						</ion-item>
-						<ion-item>
-							Virtue: {{_Character.Virtue}}
-						</ion-item>
-						<ion-item>
-							Lineage: {{_Character.Lineage}}
-						</ion-item>
-						<ion-item>
-							<div class="Skills" (click)="$event.stopPropagation()">
-								<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills"
-									(click)="PresentSkillModal(_Skill)">
-									<ion-label>
-										{{_Skill.Name}}<span *ngIf="_Skill.Count > 1">&nbsp;x{{_Skill.Count}}</span>
-									</ion-label>
-								</ion-chip>
-							</div>
-						</ion-item>
-						<ion-item *ngIf="IsApothecary(_Character.Skills) || IsMagician(_Character.Skills)">
-							<div class="Buttons" (click)="$event.stopPropagation()">
-								<ion-button *ngIf="IsMagician(_Character.Skills)" expand="block" (click)="ViewSpells(_Character)">View Spells
-								</ion-button>
-								<ion-button *ngIf="IsApothecary(_Character.Skills)" expand="block" (click)="ViewPotions(_Character)">View Potions
-								</ion-button>
-							</div>
-						</ion-item>
-					</ion-list>
-					<p class="Description" *ngIf="_Character.Alive" [innerHTML]="_Character.Summary"></p>
-					<p class="Description" *ngIf="!_Character.Alive" [innerHTML]="_Character.DeathStory"></p>
-				</ion-card-content>
-			</ion-card>
+		<ion-slide *ngFor="let _Character of Characters | Character:{page: PageTitle, search: Search}">
+			<div class="page">
+				<h1>{{_Character.FirstName}} {{_Character.LastName}}</h1>
+				<h2 [class]="_Character.EarnedName ? 'gold' : ''">{{_Character.EarnedName ? _Character.EarnedName :
+					_Character.Identity}}</h2>
+
+				<ion-list>
+					<ion-item>
+						<strong>{{_Character.Identity}}</strong>
+					</ion-item>
+					<ion-item>
+						Rank: <span class="right">{{GetRankString(_Character.Rank)}}</span>
+					</ion-item>
+					<ion-item>
+						Age: <span class="right">{{_Character.Age}}</span>
+					</ion-item>
+					<ion-item>
+						Pronouns: <span class="right">{{_Character.Gender}}</span>
+					</ion-item>
+					<ion-item>
+						Virtue: <span class="right">{{_Character.Virtue}}</span>
+					</ion-item>
+					<ion-item>
+						Lineage: <span class="right">{{_Character.Lineage}}</span>
+					</ion-item>
+					<ion-item>
+						<div class="Skills" (click)="$event.stopPropagation()">
+							<ion-chip outline="true" *ngFor="let _Skill of _Character.Skills"
+								(click)="PresentSkillModal(_Skill)">
+								<ion-label>
+									{{_Skill.Name}}<span *ngIf="_Skill.Count > 1">&nbsp;x{{_Skill.Count}}</span>
+								</ion-label>
+							</ion-chip>
+						</div>
+					</ion-item>
+					<ion-item *ngIf="IsApothecary(_Character.Skills) || IsMagician(_Character.Skills)">
+						<div class="Buttons" (click)="$event.stopPropagation()">
+							<ion-button *ngIf="IsMagician(_Character.Skills)" expand="block"
+								(click)="ViewSpells(_Character)">View Spells
+							</ion-button>
+							<ion-button *ngIf="IsApothecary(_Character.Skills)" expand="block"
+								(click)="ViewPotions(_Character)">View Potions
+							</ion-button>
+						</div>
+					</ion-item>
+				</ion-list>
+				<p class="Description" *ngIf="_Character.Alive" [innerHTML]="_Character.Summary"></p>
+				<p class="Description" *ngIf="!_Character.Alive" [innerHTML]="_Character.DeathStory"></p>
+				<ion-button (click)="PresentCharacterModal(_Character)">Read full bio</ion-button>
+			</div>
 		</ion-slide>
 	</ion-slides>
 </ion-content>
+
+<ion-footer>
+	<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+</ion-footer>

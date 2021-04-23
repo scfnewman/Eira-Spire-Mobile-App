@@ -1,0 +1,12 @@
+h1 {
+	font-size: 2rem;
+	margin: 0px;
+}
+
+ion-list {
+	ion-item {
+		--padding-bottom: 20px;
+		--padding-top: 20px;
+		--border-color: var(--ion-color-secondary-shade);
+	}
+}
