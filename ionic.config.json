@@ -1,5 +1,7 @@
 {
   "name": "EiraSpire",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

@@ -30,20 +30,12 @@
 	--background: var(--ion-color-secondary);
 }
 
-ion-content, ion-footer {
-	--background: var(--ion-color-secondary);
-	//--background: var(--ion-color-secondary-shade);
-	//--background: -webkit-linear-gradient(-45deg, var(--ion-color-secondary-shade) 0%,var(--ion-color-secondary) 33%,var(--ion-color-primary-shade) 66%,var(--ion-color-primary) 100%);
+body {
+	background-color: var(--ion-color-secondary);
 }
 
-ion-searchbar {
-	background: var(--ion-color-secondary)!important;
-	box-shadow: none;
-}
-
-ion-card,
-ion-header {
-	border: 1px solid var(--ion-color-secondary-shade);
+ion-header, ion-footer {
+	--border: 1px solid var(--ion-color-secondary-shade);
 
 	ion-buttons {
 		ion-button {
@@ -54,14 +46,6 @@ ion-header {
 
 ion-list {
 	background: none !important;
-}
-
-ion-card {
-	display: flex;
-	flex-direction: column;
-	width: 95%;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .logo {

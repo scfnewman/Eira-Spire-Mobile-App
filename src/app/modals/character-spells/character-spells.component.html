@@ -19,5 +19,7 @@
 </ion-content>
 
 <ion-footer>
-	<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	<ion-toolbar>
+		<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	</ion-toolbar>
 </ion-footer>
