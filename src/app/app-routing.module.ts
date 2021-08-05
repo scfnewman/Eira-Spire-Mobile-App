@@ -4,6 +4,7 @@ import { AssetsPage } from './pages/assets/assets.page';
 import { CharactersPage } from './pages/characters/characters.page';
 import { HomePage } from './pages/home/home.page';
 import { PagesPage } from './pages/pages/pages.page';
+import { SettingsPage } from './pages/settings/settings.page';
 import { SkillsPage } from './pages/skills/skills.page';
 import { AuthGuard } from './services/auth.guard';
 
@@ -29,12 +30,16 @@ const routes: Routes = [
 		path: 'assets',
 		component: AssetsPage,
 		canActivate: [AuthGuard]
+	},
+	{
+		path: 'settings',
+		component: SettingsPage
 	}
 ];
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+		RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, onSameUrlNavigation: 'reload' })
 	],
 	exports: [RouterModule]
 })

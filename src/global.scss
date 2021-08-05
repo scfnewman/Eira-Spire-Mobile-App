@@ -28,6 +28,10 @@
 * {
 	color: var(--ion-color-tertiary);
 	--background: var(--ion-color-secondary);
+
+	a {
+		color: var(--ion-color-primary-tint);
+	}
 }
 
 body {
@@ -91,4 +95,16 @@ h3 {
 			display: none;
 		}
 	}
+}
+
+.Alert .alert-wrapper {
+	--background: var(--ion-color-tertiary);
+
+	.alert-button * {
+		color: var(--ion-color-secondary-shade) !important;
+	}
+}
+
+.Toast {
+	--background: var(--ion-color-secondary-shade);
 }

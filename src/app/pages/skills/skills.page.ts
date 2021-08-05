@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { SkillModal } from 'src/app/modals/skill/skill.component';
 import { SpellModal } from 'src/app/modals/spell/spell.component';
 import { PotionModal } from 'src/app/modals/potion/potion.component';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
 	selector: 'app-skills',
@@ -20,30 +21,32 @@ export class SkillsPage implements OnInit {
 	constructor(
 		public _ModalController: ModalController,
 		private _Route: ActivatedRoute,
-		private _Router: Router
+		private _Router: Router,
+		private _DataService: DataService
 	) {
 		_Route.queryParams.subscribe(params => {
 			this.Category = _Router.getCurrentNavigation().extras.state.skill
-		})
+		});		
 	}
 
 	ngOnInit() {
 		this.GetData();
 	}
 
-	async GetData() {
-		switch (this.Category) {
-			case 'Skills':
-				this.Skills = JSON.parse(localStorage.getItem("SkillData"));
-				break;
-			case 'Potions':
-				this.Skills = JSON.parse(localStorage.getItem("PotionData"));
-				break;
-			case 'Spells':
-				this.Skills = JSON.parse(localStorage.getItem("SpellData"));
-				break;
-		}
-
+	GetData() {
+		this._DataService.FetchData().subscribe(_Data => {
+			switch (this.Category) {
+				case 'Skills':
+					this.Skills = _Data["Skill"];
+					break;
+				case 'Potions':
+					this.Skills = _Data["Potion"];
+					break;
+				case 'Spells':
+					this.Skills = _Data["Spell"];
+					break;
+			}
+		});
 	}
 
 	async OpenSkillModal(data) {
@@ -52,6 +55,7 @@ export class SkillsPage implements OnInit {
 				const Skill = await this._ModalController.create({
 					component: SkillModal,
 					swipeToClose: true,
+					presentingElement: document.getElementById('main-content'),
 					componentProps: {
 						Data: data
 					}
@@ -62,6 +66,7 @@ export class SkillsPage implements OnInit {
 				const Potion = await this._ModalController.create({
 					component: PotionModal,
 					swipeToClose: true,
+					presentingElement: document.getElementById('main-content'),
 					componentProps: {
 						Data: data
 					}
@@ -72,6 +77,7 @@ export class SkillsPage implements OnInit {
 				const Spell = await this._ModalController.create({
 					component: SpellModal,
 					swipeToClose: true,
+					presentingElement: document.getElementById('main-content'),
 					componentProps: {
 						Data: data
 					}
@@ -79,8 +85,5 @@ export class SkillsPage implements OnInit {
 
 				return Spell.present();
 		}
-
-
 	}
-
 }

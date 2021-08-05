@@ -41,6 +41,7 @@ export class CharacterSpellsModal implements OnInit {
 		const Modal = await this._ModalController.create({
 			component: SpellModal,
 			swipeToClose: true,
+			presentingElement: document.getElementById('main-content'),
 			componentProps: {
 				Data: _Spell
 			}

@@ -33,21 +33,24 @@ export class CharactersPage implements OnInit {
 	) {
 		_Route.queryParams.subscribe(params => {
 			this.PageTitle = _Router.getCurrentNavigation().extras.state.title
-		})
-	}
+		});
 
-	ngOnInit() {
 		this.GetData();
 	}
 
-	async GetData() {
-		this.Characters = JSON.parse(localStorage.getItem('CharacterData'));
+	ngOnInit() {}
+
+	GetData() {
+		this._DataService.FetchData().subscribe(_Data => {
+			this.Characters = _Data["Character"];
+		})
 	}
 
 	async PresentCharacterModal(data) {
 		const Modal = await this._ModalController.create({
 			component: CharacterModal,
 			swipeToClose: true,
+			presentingElement: document.getElementById('main-content'),
 			componentProps: {
 				Data: data
 			}
@@ -59,6 +62,7 @@ export class CharactersPage implements OnInit {
 		const Modal = await this._ModalController.create({
 			component: SkillModal,
 			swipeToClose: true,
+			presentingElement: document.getElementById('main-content'),
 			componentProps: {
 				Data: data
 			}
@@ -98,6 +102,7 @@ export class CharactersPage implements OnInit {
 		const Modal = await this._ModalController.create({
 			component: CharacterSpellsModal,
 			swipeToClose: true,
+			presentingElement: document.getElementById('main-content'),
 			componentProps: {
 				Data: _Character
 			}
@@ -110,6 +115,7 @@ export class CharactersPage implements OnInit {
 		const Modal = await this._ModalController.create({
 			component: CharacterPotionsModal,
 			swipeToClose: true,
+			presentingElement: document.getElementById('main-content'),
 			componentProps: {
 				Data: _Character
 			}

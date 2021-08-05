@@ -25,6 +25,7 @@ import { PotionModal } from './modals/potion/potion.component';
 import { SpellModal } from './modals/spell/spell.component';
 import { CharacterSpellsModal } from './modals/character-spells/character-spells.component';
 import { LoginModal } from './modals/login/login.component';
+import { HelpModal } from './modals/help/help.component';
 
 import { DataService } from './services/data.service'
 import { PipesModule } from './pipes/pipes.module';
@@ -35,8 +36,7 @@ import { CharactersPage } from './pages/characters/characters.page';
 import { PagesPage } from './pages/pages/pages.page';
 import { SkillsPage } from './pages/skills/skills.page';
 import { AssetsPage } from './pages/assets/assets.page';
-
-
+import { SettingsPage } from './pages/settings/settings.page';
 
 @NgModule({
 	declarations: [
@@ -47,6 +47,7 @@ import { AssetsPage } from './pages/assets/assets.page';
 		CharacterModal,
 		SkillsPage,
 		AssetsPage,
+		SettingsPage,
 
 		SkillModal,
 		PageModal,
@@ -54,7 +55,8 @@ import { AssetsPage } from './pages/assets/assets.page';
 		SpellModal,
 		CharacterPotionsModal,
 		CharacterSpellsModal,
-		LoginModal
+		LoginModal,
+		HelpModal
 	],
 	entryComponents: [
 		HomePage,
@@ -63,6 +65,7 @@ import { AssetsPage } from './pages/assets/assets.page';
 		CharacterModal,
 		SkillsPage,
 		AssetsPage,
+		SettingsPage,
 		
 		SkillModal,
 		PageModal,
@@ -70,7 +73,8 @@ import { AssetsPage } from './pages/assets/assets.page';
 		SpellModal,
 		CharacterPotionsModal,
 		CharacterSpellsModal,
-		LoginModal
+		LoginModal,
+		HelpModal
 	],
 	imports: [
 		HttpClientModule,

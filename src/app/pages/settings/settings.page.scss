@@ -1,0 +1,31 @@
+ion-content {
+	.activation, .buttons {
+		padding: 20px;
+	}
+
+	.activation {
+		text-align: center;
+		border-bottom: 1px solid var(--ion-color-primary-tint);
+	
+		h1 {
+			margin-bottom: 1rem;
+		}
+	
+		ion-input {
+			--background: var(--ion-color-secondary-shade);
+			padding: 5px;
+			border-radius: 5px;
+		}
+	
+		ion-icon {
+			font-size: 2.5rem;
+		}
+	}
+
+	ion-toggle {
+		--background: var(--ion-color-secondary-shade);
+		--handle-background: var(--ion-color-tertiary);
+	}
+}
+
+

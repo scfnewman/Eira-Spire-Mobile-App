@@ -41,6 +41,7 @@ export class CharacterPotionsModal implements OnInit {
 		const Modal = await this._ModalController.create({
 			component: PotionModal,
 			swipeToClose: true,
+			presentingElement: document.getElementById('main-content'),
 			componentProps: {
 				Data: _Potion
 			}

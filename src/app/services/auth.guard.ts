@@ -32,7 +32,8 @@ export class AuthGuard implements CanActivate {
 				}
 
 				this._Modal.create({
-					component: LoginModal
+					component: LoginModal,
+					presentingElement: document.getElementById('main-content')
 				}).then(_Modal => {
 					_Modal.present();
 
