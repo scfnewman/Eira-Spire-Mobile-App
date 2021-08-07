@@ -121,6 +121,8 @@ export class DataService {
 					if (_UpdatedItem.PageID == _CurrentItem.PageID) {
 						Current[i] = _UpdatedItem;
 						break;
+					} else if(i == Current.length - 1) {
+						Current.push(_UpdatedItem);
 					}
 				}
 			});
