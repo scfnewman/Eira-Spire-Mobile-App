@@ -17,6 +17,11 @@ export class SkillPipe implements PipeTransform {
 			})
 		}
 
+		Skills = Skills.sort((a, b) => {
+			if(a.Name > b.Name) return 1;
+			else return -1;
+		})
+
 		return Skills;
 	}
 
