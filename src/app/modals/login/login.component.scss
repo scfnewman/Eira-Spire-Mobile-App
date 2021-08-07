@@ -1,0 +1,30 @@
+
+.page {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 100%;
+	width: 100%;
+
+	.image {
+		width: 50%;
+		max-width: 170px;
+		margin: 0 auto;
+	
+		img {
+			width: 100%;
+		}
+	}
+
+	form {
+		width: 100%;
+		ion-input {
+			--background: var(--ion-color-secondary-shade);
+			--padding-start: 10px;
+			border-radius: 5px;
+		}
+	}
+}
+

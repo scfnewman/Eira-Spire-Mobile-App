@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+	<defs>
+		<style>.cls-1{fill:#00394e;}.cls-2{fill:#006083;}.cls-3{fill:#2f3d42;}.cls-4{fill:#e5ffff;}.cls-5{fill:#475a61;}.cls-6{fill:#5f6e74;}</style>
+	</defs>
+	<title>Spire</title>
+	<g id="Background">
+		<rect class="cls-1" width="512" height="1024"/>
+		<rect class="cls-2" x="512" width="512" height="1024"/>
+	</g>
+	<g id="Back">
+		<polygon class="cls-3" points="512 161 0 961.46 0 1024 1024 1024 1024 990.59 512 161"/>
+	</g>
+	<g id="Back_Top" data-name="Back Top">
+		<polyline class="cls-4" points="512 161 335 437 412 342 443 415 477 366 525 434 559 371 634 478 636 399 714 488"/>
+	</g>
+	<g id="Left">
+		<polyline class="cls-5" points="268 409 0 883.57 0 1024 561 1024 268 409"/>
+	</g>
+	<g id="Left_Top" data-name="Left Top">
+		<polygon class="cls-4" points="268 409 114 684 191 588 220 649 277 572 318 615 335 549 268 409"/>
+	</g>
+	<g id="Right">
+		<polyline class="cls-6" points="892 514 585 1024 1024 1023 1024 740.01 891 514"/>
+	</g>
+	<g id="Right_Top" data-name="Right Top">
+		<polygon class="cls-4" points="891 515 765 725 826 699 865 733 897 707 944 751 963 715 1024 752 1024 741.01 891 515"/>
+	</g>	
+</svg>

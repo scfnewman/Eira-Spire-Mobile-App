@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button (click)="Dismiss()">Close</ion-button>
+		</ion-buttons>
+		<ion-title>{{Data.FirstName}} {{Data.LastName}} | Spells</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list lines="full">
+		<ion-item *ngFor="let _Spell of Spells | Skill:{search: Search}" (click)="OpenSpellModal(_Spell)" detail="true">
+			<div>
+				<h2>{{_Spell.Category}}</h2>
+				<h1>{{_Spell.Name}}</h1>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	</ion-toolbar>
+</ion-footer>

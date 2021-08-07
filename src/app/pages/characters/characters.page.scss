@@ -1,0 +1,61 @@
+ion-slide {
+	height: 100%;
+
+	.contents {
+		p {
+			margin: 0;
+			line-height: 0.7rem;
+		}
+
+		.gold {
+			font-size: 0.7rem;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+
+	.page {
+
+		ion-list {
+			margin-bottom: 10px !important;
+
+			ion-item {
+				--padding-start: 0px;
+			}
+		}
+
+		.Skills {
+			display: flex;
+			flex-flow: wrap;
+			justify-content: center;
+			align-items: flex-start;
+			width: 100%;
+
+			ion-chip {
+				min-width: 45% !important;
+				border: 1px solid var(--ion-color-primary);
+
+				ion-label {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+
+		.Description {
+			text-align: left;
+		}
+
+		.Buttons {
+			width: 100%;
+			min-width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+		}
+
+		ion-button {
+			border: 1px solid var(--ion-color-primary);
+			font-weight: bold;
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>Settings</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="activation">
+		<h1>Activation</h1>
+		<ng-container *ngIf="!_DataService.Activated">
+			<ion-text color="tertiary">
+				<p>
+					What is the in-game name of the location that hosts each summit?
+				</p>
+			</ion-text>
+			<ion-input type="text" placeholder="Your answer here" [(ngModel)]="Answer"></ion-input>
+			<ion-button color="primary" expand="block" (click)="Submit()">Submit</ion-button>
+		</ng-container>
+		
+		<ng-container *ngIf="_DataService.Activated">
+			<ion-icon name="checkmark-circle" color="success"></ion-icon>
+			<ion-text color="tertiary">
+				<p>
+					Downloads have been activated.
+				</p>
+			</ion-text>
+		</ng-container>
+	</div>
+
+	<div *ngIf="_DataService.Activated" class="settings">
+		<ion-list lines="none">
+		</ion-list>
+	</div>
+
+	<div *ngIf="_DataService.Activated" class="buttons">
+		<ion-button color="primary" expand="block" (click)="_DataService.DownloadData()">
+			Download Data
+		</ion-button>
+
+		<ion-button color="danger" expand="block" (click)="_DataService.ClearAllStoredData()">
+			Clear all downloaded data
+		</ion-button>
+	</div>
+</ion-content>

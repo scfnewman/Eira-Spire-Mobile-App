@@ -1,0 +1,26 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{Category}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list lines="full">
+		<ion-item *ngFor="let _Skill of Skills | Skill:{search: Search}" (click)="OpenSkillModal(_Skill)" detail="true">
+			<div>
+				<h2>{{_Skill.Category}}</h2>
+				<h1>{{_Skill.Name}}</h1>
+				<h3 *ngIf="_Skill.Form">{{_Skill.Form}}</h3>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	</ion-toolbar>
+</ion-footer>

@@ -1,27 +1,28 @@
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { Plugins, StatusBarStyle } from '@capacitor/core'
+import { DataService } from './services/data.service';
+
+const { SplashScreen, StatusBar } = Plugins
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+	selector: 'app-root',
+	templateUrl: 'app.component.html',
+	styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
-  ) {
-    this.initializeApp();
-  }
+	constructor(
+		private _Platform: Platform,
+		private _DataService: DataService
+	) {
+		this.initializeApp();
+	}
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
+	initializeApp() {
+		this._Platform.ready().then(() => {
+			StatusBar.setStyle({ style: StatusBarStyle.Dark });
+		});
+	}
 }

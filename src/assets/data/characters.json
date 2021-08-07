@@ -1,0 +1,119 @@
+{
+	"Data": [
+		{
+			"Alive": true,
+			"ID": 0,
+			"Rank": 3,
+			"FirstName": "Stór",
+			"LastName": "Kynfæri",
+			"EarnedName": "Thrice Cut",
+			"Identity": "Business Owner",
+			"Age": 23,
+			"Gender": "Male",
+			"Lineage": "Human",
+			"Virtue": "Courage",
+			"Skills": [
+				"Ambidexterity",
+				"Weapon master",
+				"Hero",
+				"Cleaving Strike",
+				"Stay with me",
+				"Get it together"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": "Stór grew up in the spire with his parents and his 3 brothers.  As the boldest of the brothers, Stór was the leader and often lead them into trouble with the local guards after causing mischief somewhere in the village.  Despite being a trouble maker, Stór never let his other brothers take the blame for his escapades.  In the years of his childhood, he ran the occasional errand for the family business but he grew older, he became a bigger part of the business and as such, now that he's an adult, he plays an active role in running the business and is set to inherit it in future.</p><p>After the invasion of Sermersuaq by the Jotun, Stór felt that he could not sit idly by and watch; so he joined the local guard to help fend off any potential invaders and to protect his family.  When it was announced that a group would be going down to the Anvil summit for the Autumn Equinox, Stór volunteered immediately so that he could help push back the Jotun.",
+				"NameStory": "Stór earned his name at the Anvil summit of the Autumn Equinox of 383YE.  As he endeavours to embody the virtue of Courage, Stór was first in line to help defend his home from the invading Jotun.  Unfortunately, being inexperienced in combat having only recently joined the Eira Spire guard, the Jotun proved to be dangerous foes for Stór and he found himself in the arms of a healer multiple times.  On three occasions throughout the summit, Stór left his left leg unguarded while in battle; the Jotun took advantage of the vulnerability and cleaved the leg, leaving Stór badly wounded.</p><p>If it were not for the honourable nature of the Jotun and his brave allies stepping in to protect him, Stór would have perished on the battlefield.  Despite the grievous injuries to his leg, Stór was resolute and returned to the battle the moment his leg had been repaired by the healers, although with an air of caution.  Around the fires of Wintermark near the end of the summit, Orvar and the other hall members told of Stór's misadventures in battle.  The scop Wulfmear \"Songsmith\" Dunwold of the Dunnings Hall named Stór \"Thrice Cut\" for his courage and determination to continue fighting despite his wounds."
+			},
+			"PlayerInfo": {
+				"Name": "Simon Newman",
+				"HealthConcerns": [
+					"None"
+				]
+			}
+		},
+		{
+			"Alive": true,
+			"ID": 1,
+			"Rank": 0,
+			"FirstName": "Orvar",
+			"LastName": "Lurask",
+			"EarnedName": "The Protector",
+			"Identity": "Thane",
+			"Age": 25,
+			"Gender": "Male",
+			"Lineage": "Human",
+			"Virtue": "Pride",
+			"Skills": [
+				"Archery"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": "Orvar Lurask, first born son of Bjorn Lurask and Linnea Lurask and the current presiding thane of Eira Spire rose to the title of thane at the age of 13 after the tragic death of his father. Now at 24 years old the young thane or \"The Bear Cub\" as he is nicknamed is a skilled archer and noble leader for his people.</p><p>Where you see Orvar you generally find Adelyn not far behind. The two have grown very close over the years and to some it even seems like Adelyn is also a thane with her sway over her brothers ear. Orvar is very protective of Adelyn as he is often either with her and when he is not he has a guard or two with her as escort much to Adelyn's annoyance.</p><p>Orvar's close friend and secondary advisor Karigon he has known all his life and has often in his youth ignored her but as he aged he saw wisdom in her words and when he became thane sought her out to ask for her assistance in an advisory position however when he discovered her visibly upset in a tavern as drunk men taunted her over her mother's death Orvar felt the need to make that request public and stand up for his friend at the same time. As Orvar entered the tavern slowly and unseen he loudly spoke startling the drunk men</p><p>“Mia was a great women and a true Lurask and she would be proud of her daughter as am I, you would all do best to remember that we're all equal under the mountain but as the new thane I would do Mia the honour of asking Karigon to be my hand, to serve as advisor to the thane and I would hope should she accept to not hear such remarks about an advisor within these walls again”</p><p>Orvar's skills with a bow are great, he is able to shoot with great speed and accuracy and is certainly a threat to be reckoned with in his own right as a fighter however he rarely if ever picks up a sword after losing his childhood lover long ago in a tragic accident when she was killed by a shattering blade while watching Orvar train.</p><p>He is well liked by the citizenry and guard alike and they seem to respect his leadership despite some controversial decisions like the overturning of the exile of his cousin who was exiled by his father long ago.",
+				"NameStory": "During the events of the Anvil Autumn Equinox summit of the year 383YE, Orvar joined the heroes of both Wintermark and his own hall on a daring raid into Sermersuaq.  As one of his arrows pierced a Jotun hide, dropping him where he stood, he looked to the left and saw one of his bannermen, Stór, fall having been cut down by a Jotun; responding rapidly, Orvar released a second arrow, slaying the beast as a medic rushed to Stór's side.  Orvar's breath of relief was short lived however as he saw two more Jotun clad in leather armour charge the injured Stór and his healer; without a second thought Orvar positioned himself between them and his injured hall mate and announced \"Don’t even try it\", nocking an arrow and aiming his bow at them.  The orcs paused for a second as if challenging Orvar but upon realising he was serious retreated away from him.</p><p>At the fires of Wintermark that night, the scop Wulfmear \"Songsmith\" Dunwold of the Dunnings Hall named Orvar \"The Protector\" in honour of his heroic action."
+			},
+			"PlayerInfo": {
+				"Name": "Robert Gibbs",
+				"HealthConcerns": [
+					"None"
+				]
+			}
+		},
+		{
+			"Alive": true,
+			"ID": 2,
+			"Rank": 1,
+			"FirstName": "Adelyn",
+			"LastName": "Lurask",
+			"EarnedName": "",
+			"Identity": "Head Advisor",
+			"Age": 24,
+			"Gender": "Female",
+			"Lineage": "Human",
+			"Virtue": "Prosperity",
+			"Skills": [
+				"Magician",
+				"Battle mage"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": "",
+				"NameStory": ""
+			},
+			"PlayerInfo": {
+				"Name": "Amy Bland",
+				"HealthConcerns": [
+					"None"
+				]
+			}
+		},
+		{
+			"Alive": true,
+			"ID": 3,
+			"Rank": 5,
+			"FirstName": "Jarec",
+			"LastName": "Omnos",
+			"EarnedName": "",
+			"Identity": "Maggot",
+			"Age": 24,
+			"Gender": "Male",
+			"Lineage": "Human",
+			"Virtue": "-",
+			"Skills": [
+				"Ambidexterity"
+			],
+			"Summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus volutpat sapien, nec finibus lacus lacinia at. Nulla libero urna, finibus vel leo vel, ullamcorper porta magna. Praesent congue augue eget tortor gravida aliquet. Pellentesque vehicula consequat lacus, ornare dictum ante vestibulum nec. Duis volutpat iaculis turpis, ut dapibus purus aliquet et. Donec et mi non ex semper cursus. Sed luctus posuere eros vel rhoncus. Aenean condimentum ut eros in laoreet. Fusce maximus, nunc ut venenatis accumsan, ligula nulla ultricies urna, nec viverra metus tortor at massa. Curabitur vitae tortor molestie, iaculis risus vitae, vulputate eros. Mauris tempus velit id mi ornare placerat. Fusce quis lacus quis nisl vestibulum mollis sed eu dui. Quisque porta vel lectus at mattis. Etiam gravida gravida purus.",
+			"Details": {
+				"Background": "",
+				"NameStory": ""
+			},
+			"PlayerInfo": {
+				"Name": "Jake",
+				"HealthConcerns": [
+					"None"
+				]
+			}
+		}
+
+	]
+}

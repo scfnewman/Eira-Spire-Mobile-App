@@ -1,0 +1,26 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button (click)="Dismiss()">Close</ion-button>
+		</ion-buttons>
+		<ion-title>{{Data.FirstName}} {{Data.LastName}} | Potions</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list lines="full">
+		<ion-item *ngFor="let _Potion of Potions | Skill:{search: Search}" (click)="OpenPotionModal(_Potion)" detail="true">
+			<div>
+				<h2>{{_Potion.Category}}</h2>
+				<h1>{{_Potion.Name}}</h1>
+				<h3>{{_Potion.Form}}</h3>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	</ion-toolbar>
+</ion-footer>

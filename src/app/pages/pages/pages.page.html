@@ -1,0 +1,26 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{Category}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list lines="full">
+		<ion-item *ngFor="let _Page of Pages | Page:{category: Category, search: Search}" (click)="OpenPageModal(_Page)" detail="true">
+			<div>
+				<h2>{{_Page.Subtitle}}</h2>
+				<h1>{{_Page.Title}}</h1>
+				<h3>By {{_Page.Author}}</h3>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-searchbar (ionChange)="Search = $event.detail.value"></ion-searchbar>
+	</ion-toolbar>
+</ion-footer>
