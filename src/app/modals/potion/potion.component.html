@@ -19,7 +19,7 @@
 					<ion-icon *ngIf="HideDefinition" (click)="HideDefinition = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="Data.Definition" [class]="HideDefinition ? 'hidden' : ''"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Definition)" [class]="HideDefinition ? 'hidden' : ''"></p>
 		</section>
 
 		<section *ngIf="Data.Description">
@@ -29,7 +29,7 @@
 					<ion-icon *ngIf="HideDescription" (click)="HideDescription = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="Data.Description" [class]="HideDescription ? 'hidden' : ''"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Description)" [class]="HideDescription ? 'hidden' : ''"></p>
 		</section>
 
 		<section *ngIf="Data.RoleplayingEffect">
@@ -39,7 +39,7 @@
 					<ion-icon *ngIf="HideRoleplayingEffect" (click)="HideRoleplayingEffect = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="Data.RoleplayingEffect" [class]="HideRoleplayingEffect ? 'hidden' : ''"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.RoleplayingEffect)" [class]="HideRoleplayingEffect ? 'hidden' : ''"></p>
 		</section>
 
 		<section *ngIf="Data.MechanicalEffect">
@@ -49,7 +49,7 @@
 					<ion-icon *ngIf="HideMechanicalEffect" (click)="HideMechanicalEffect = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="Data.MechanicalEffect" [class]="HideMechanicalEffect ? 'hidden' : ''"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.MechanicalEffect)" [class]="HideMechanicalEffect ? 'hidden' : ''"></p>
 		</section>
 
 		<section *ngIf="Data.Recipe">
@@ -59,7 +59,7 @@
 					<ion-icon *ngIf="HideRecipe" (click)="HideRecipe = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="Data.Recipe" [class]="HideRecipe ? 'hidden' : ''"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Recipe)" [class]="HideRecipe ? 'hidden' : ''"></p>
 		</section>
 
 		<section *ngIf="Data.Notes">
@@ -69,7 +69,7 @@
 					<ion-icon *ngIf="HideNotes" (click)="HideNotes = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="Data.Notes" [class]="HideNotes ? 'hidden' : ''"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Notes)" [class]="HideNotes ? 'hidden' : ''"></p>
 		</section>
 	</div>
 </ion-content>

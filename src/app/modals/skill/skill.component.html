@@ -15,7 +15,7 @@
 
 		<section>
 			<h1>Description</h1>
-			<p [innerHTML]="Data.Description"></p>
+			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Description)"></p>
 		</section>
 	</div>
 </ion-content>

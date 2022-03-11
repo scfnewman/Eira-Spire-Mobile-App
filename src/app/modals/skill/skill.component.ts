@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -11,7 +12,8 @@ export class SkillModal implements OnInit {
 	@Input() Data: any;
 
 	constructor(
-		private _ModalController: ModalController
+		private _ModalController: ModalController,
+		public _Sanitizer: DomSanitizer
 	) { }
 
 	ngOnInit() {

@@ -97,4 +97,14 @@ export class HomePage implements OnInit {
 			_Modal.present();
 		})
 	}
+
+	CalculateCategorySize(Index) {
+		let Count = this.Categories.length;
+
+		if(Count < 3) return 12;
+
+		if(Count % 2 == 0) return 6;
+
+		if(Index == Count - 1) return 12;
+	}
 }

@@ -13,8 +13,7 @@
 		<h2>{{Data.Subtitle}}</h2>
 		<h3>By {{Data.Author}}</h3>
 
-		<section *ngIf="Data.Body">
-			<p [innerHTML]="Data.Body"></p>
+		<section *ngIf="Data.Body" [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Body)">
 		</section>
 
 		<section *ngFor="let _Section of Data.Sections; index as i">
@@ -24,7 +23,7 @@
 					<ion-icon *ngIf="HideSections[i]" (click)="HideSections[i] = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="_Section.Body" [class]="HideSections[i] ? 'hidden' : ''"></p>
+			<div [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(_Section.Body)" [class]="HideSections[i] ? 'hidden' : ''"></div>
 		</section>
 	</div>
 </ion-content>

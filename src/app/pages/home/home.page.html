@@ -24,7 +24,7 @@
 					</div>
 				</ion-col>
 
-				<ion-col size="12" *ngFor="let _Category of Categories" (click)="OpenPagesPage(_Category)">
+				<ion-col *ngFor="let _Category of Categories; index as i" [size]="CalculateCategorySize(i)" (click)="OpenPagesPage(_Category)">
 					<div>
 						{{_Category}}
 					</div>

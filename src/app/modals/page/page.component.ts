@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-page',
@@ -13,7 +14,8 @@ export class PageModal implements OnInit {
 	HideSections: boolean[] = [];
 
 	constructor(
-		private _ModalCtrl: ModalController
+		private _ModalCtrl: ModalController,
+		public _Sanitizer: DomSanitizer
 	) { }
 
 	ngOnInit() {
