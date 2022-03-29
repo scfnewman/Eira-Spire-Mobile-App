@@ -20,7 +20,7 @@
 					<ion-icon *ngIf="HideDescription" (click)="HideDescription = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Description)" [class]="HideDescription ? 'hidden' : ''"></p>
+			<div [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Description)" [class]="HideDescription ? 'hidden' : ''"></div>
 		</section>
 
 		<section *ngIf="Data.Effects">
@@ -30,7 +30,7 @@
 					<ion-icon *ngIf="HideEffects" (click)="HideEffects = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Effects)" [class]="HideEffects ? 'hidden' : ''"></p>
+			<div [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Effects)" [class]="HideEffects ? 'hidden' : ''"></div>
 		</section>
 
 		<section *ngFor="let _Section of Data.Sections; index as i">
@@ -40,7 +40,7 @@
 					<ion-icon *ngIf="HideSections[i]" (click)="HideSections[i] = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<p [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(_Section.Body)" [class]="HideSections[i] ? 'hidden' : ''"></p>
+			<div [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(_Section.Body)" [class]="HideSections[i] ? 'hidden' : ''"></div>
 		</section>
 	</div>
 </ion-content>
