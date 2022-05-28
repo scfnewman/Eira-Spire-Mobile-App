@@ -29,7 +29,7 @@
 					<ion-icon *ngIf="HideDeath" (click)="HideDeath = false" name="chevron-down"></ion-icon>
 				</span>
 			</h1>
-			<div [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.Death)" [class]="HideDeath ? 'hidden' : ''"></div>
+			<div [innerHTML]="this._Sanitizer.bypassSecurityTrustHtml(Data.DeathStory)" [class]="HideDeath ? 'hidden' : ''"></div>
 		</section>
 
 		<section *ngIf="Data.Details.Background">
