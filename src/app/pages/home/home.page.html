@@ -12,18 +12,20 @@
 					</div>
 				</ion-col>
 
-				<ion-col size="12" (click)="OpenCharactersPage('Associates')">
+				<ion-col size="6" (click)="OpenCharactersPage('Associates')">
 					<div>
 						Associates
 					</div>
 				</ion-col>
 
-				<ion-col size="12" (click)="OpenCharactersPage('Fallen Heroes')">
+				<ion-col size="6" (click)="OpenCharactersPage('Fallen Heroes')">
 					<div>
-						Fallen Heroes
+						Fallen
 					</div>
 				</ion-col>
+			</ion-row>
 
+			<ion-row>
 				<ion-col *ngFor="let _Category of Categories; index as i" [size]="CalculateCategorySize(i)" (click)="OpenPagesPage(_Category)">
 					<div>
 						{{_Category}}
@@ -48,8 +50,10 @@
 					</div>
 				</ion-col>
 
-				<!-- <ion-col size="6" [routerLink]="['/assets']">
-					<div>Assets</div>
+				<!-- <ion-col size="6" (click)="OpenSkillsPage('Artisan');">
+					<div>
+						Artisan Recipes
+					</div>
 				</ion-col> -->
 			</ion-row>
 		</ion-grid>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { BehaviorSubject, Subscription, Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -17,10 +17,10 @@ export class DataService {
 	PageSub: Subscription;
 	PotionSub: Subscription;
 	SpellSub: Subscription;
-	AssetSub: Subscription;
+	ArtisanSub: Subscription;
 
 	constructor(
-		private _FireStore: AngularFirestore,
+		private _Firestore: AngularFirestore,
 		private _Alert: AlertController,
 		private _Toast: ToastController
 	) {
@@ -30,7 +30,7 @@ export class DataService {
 			Page: this.FetchStoredData('Page'),
 			Potion: this.FetchStoredData('Potion'),
 			Spell: this.FetchStoredData('Spell'),
-			Asset: this.FetchStoredData('Asset'),
+			Artisan: this.FetchStoredData('Artisan')
 		}
 
 		this.AppData = new BehaviorSubject<any>(this._AppData);
@@ -49,45 +49,43 @@ export class DataService {
 		let PageDownload = localStorage.getItem('PageDownload') ? parseInt(localStorage.getItem('PageDownload')) : 0;
 		let PotionDownload = localStorage.getItem('PotionDownload') ? parseInt(localStorage.getItem('PotionDownload')) : 0;
 		let SpellDownload = localStorage.getItem('SpellDownload') ? parseInt(localStorage.getItem('SpellDownload')) : 0;
-		let AssetDownload = localStorage.getItem('AssetDownload') ? parseInt(localStorage.getItem('AssetDownload')) : 0;
+		let ArtisanDownload = localStorage.getItem('ArtisanDownload') ? parseInt(localStorage.getItem('ArtisanDownload')) : 0;
 
-		this.CharacterSub = this._FireStore.collection<any>('characters', (ref) => ref.where('LastUpdate', '>=', CharacterDownload)).valueChanges().subscribe(data => {
+		this.CharacterSub = this._Firestore.collection<any>('characters', (ref) => ref.where('LastUpdate', '>=', CharacterDownload)).valueChanges().subscribe(data => {
 			if (data) {
 				this.UpdateStoredData('Character', data);
 			}
 		});
 
-		this.SkillSub = this._FireStore.collection<any>('skills', (ref) => ref.where('LastUpdate', '>=', SkillDownload)).valueChanges().subscribe(data => {
+		this.SkillSub = this._Firestore.collection<any>('skills', (ref) => ref.where('LastUpdate', '>=', SkillDownload)).valueChanges().subscribe(data => {
 			if (data) {
 				this.UpdateStoredData('Skill', data);
 			}
 		});
 
-		this.PageSub = this._FireStore.collection<any>('pages', (ref) => ref.where('LastUpdate', '>=', PageDownload)).valueChanges().subscribe(data => {
+		this.PageSub = this._Firestore.collection<any>('pages', (ref) => ref.where('LastUpdate', '>=', PageDownload)).valueChanges().subscribe(data => {
 			if (data) {
 				this.UpdateStoredData('Page', data);
 			}
 		});
 
-		this.PotionSub = this._FireStore.collection<any>('potions', (ref) => ref.where('LastUpdate', '>=', PotionDownload)).valueChanges().subscribe(data => {
+		this.PotionSub = this._Firestore.collection<any>('potions', (ref) => ref.where('LastUpdate', '>=', PotionDownload)).valueChanges().subscribe(data => {
 			if (data) {
 				this.UpdateStoredData('Potion', data);
 			}
 		});
 
-		this.SpellSub = this._FireStore.collection<any>('spells', (ref) => ref.where('LastUpdate', '>=', SpellDownload)).valueChanges().subscribe(data => {
+		this.SpellSub = this._Firestore.collection<any>('spells', (ref) => ref.where('LastUpdate', '>=', SpellDownload)).valueChanges().subscribe(data => {
 			if (data) {
 				this.UpdateStoredData('Spell', data);
 			}
 		});
 
-		/*
-		this.AssetSub = this._FireStore.collection<any>('assets', (ref) => ref.where('LastUpdate', '>=', AssetDownload)).valueChanges().subscribe(data => {
+		this.SpellSub = this._Firestore.collection<any>('artisan', (ref) => ref.where('LastUpdate', '>=', ArtisanDownload)).valueChanges().subscribe(data => {
 			if (data) {
-				this.UpdateStoredData('Asset', data);
+				this.UpdateStoredData('Artisan', data);
 			}
 		});
-		*/
 
 		this._Toast.create({
 			message: "Downloading latest data...",
@@ -104,7 +102,7 @@ export class DataService {
 		this.PageSub.unsubscribe();
 		this.PotionSub.unsubscribe();
 		this.SpellSub.unsubscribe();
-		//this.AssetSub.unsubscribe();
+		this.ArtisanSub.unsubscribe();
 	}
 
 	FetchStoredData(CollectionName) {
@@ -170,7 +168,7 @@ export class DataService {
 						this.ClearStoredData('Page');
 						this.ClearStoredData('Potion');
 						this.ClearStoredData('Spell');
-						this.ClearStoredData('Asset');
+						this.ClearStoredData('Artisan');
 
 						localStorage.removeItem('Activated');
 						this.Activated = false;

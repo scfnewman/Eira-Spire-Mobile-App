@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
-
-import { Plugins, StatusBarStyle } from '@capacitor/core'
 import { DataService } from './services/data.service';
-
-const { SplashScreen, StatusBar } = Plugins
+import { StatusBar, Style } from '@capacitor/status-bar';
 
 @Component({
 	selector: 'app-root',
@@ -22,7 +18,7 @@ export class AppComponent {
 
 	initializeApp() {
 		this._Platform.ready().then(() => {
-			StatusBar.setStyle({ style: StatusBarStyle.Dark });
+			StatusBar.setStyle({ style: Style.Dark });
 		});
 	}
 }

@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { SkillModal } from 'src/app/modals/skill/skill.component';
 import { SpellModal } from 'src/app/modals/spell/spell.component';
 import { PotionModal } from 'src/app/modals/potion/potion.component';
+import { ArtisanModal } from 'src/app/modals/artisan/artisan.component';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -45,6 +46,9 @@ export class SkillsPage implements OnInit {
 				case 'Spells':
 					this.Skills = _Data["Spell"];
 					break;
+				case 'Artisan':
+					this.Skills = _Data["Artisan"];
+					break;
 			}
 		});
 	}
@@ -84,6 +88,17 @@ export class SkillsPage implements OnInit {
 				})
 
 				return Spell.present();
+			case 'Artisan':
+				const Recipe = await this._ModalController.create({
+					component: ArtisanModal,
+					swipeToClose: true,
+					presentingElement: document.getElementById('main-content'),
+					componentProps: {
+						Data: data
+					}
+				});
+
+				return Recipe.present();
 		}
 	}
 }

@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,9 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AngularFireModule } from '@angular/fire/compat';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FirebaseConfig } from './../credentials';
 
 import { CharacterModal } from './modals/character/character.component'
@@ -24,7 +22,6 @@ import { CharacterPotionsModal } from './modals/character-potions/character-poti
 import { PotionModal } from './modals/potion/potion.component';
 import { SpellModal } from './modals/spell/spell.component';
 import { CharacterSpellsModal } from './modals/character-spells/character-spells.component';
-import { LoginModal } from './modals/login/login.component';
 import { HelpModal } from './modals/help/help.component';
 
 import { DataService } from './services/data.service'
@@ -35,8 +32,8 @@ import { HomePage } from './pages/home/home.page';
 import { CharactersPage } from './pages/characters/characters.page';
 import { PagesPage } from './pages/pages/pages.page';
 import { SkillsPage } from './pages/skills/skills.page';
-import { AssetsPage } from './pages/assets/assets.page';
 import { SettingsPage } from './pages/settings/settings.page';
+import { ArtisanModal } from './modals/artisan/artisan.component';
 
 @NgModule({
 	declarations: [
@@ -46,7 +43,6 @@ import { SettingsPage } from './pages/settings/settings.page';
 		PagesPage,
 		CharacterModal,
 		SkillsPage,
-		AssetsPage,
 		SettingsPage,
 
 		SkillModal,
@@ -55,8 +51,8 @@ import { SettingsPage } from './pages/settings/settings.page';
 		SpellModal,
 		CharacterPotionsModal,
 		CharacterSpellsModal,
-		LoginModal,
-		HelpModal
+		HelpModal,
+		ArtisanModal
 	],
 	entryComponents: [
 		HomePage,
@@ -64,7 +60,6 @@ import { SettingsPage } from './pages/settings/settings.page';
 		PagesPage,
 		CharacterModal,
 		SkillsPage,
-		AssetsPage,
 		SettingsPage,
 		
 		SkillModal,
@@ -73,8 +68,8 @@ import { SettingsPage } from './pages/settings/settings.page';
 		SpellModal,
 		CharacterPotionsModal,
 		CharacterSpellsModal,
-		LoginModal,
-		HelpModal
+		HelpModal,
+		ArtisanModal
 	],
 	imports: [
 		HttpClientModule,
@@ -82,15 +77,13 @@ import { SettingsPage } from './pages/settings/settings.page';
 		IonicModule.forRoot(),
 		AppRoutingModule,
 		AngularFireModule.initializeApp(FirebaseConfig),
-		AngularFirestoreModule,
-		AngularFireAuthModule,
+		provideFirebaseApp(() => initializeApp(FirebaseConfig)),
+		provideFirestore(() => getFirestore()),
 		PipesModule,
 		FormsModule,
 		ReactiveFormsModule
 	],
 	providers: [
-		StatusBar,
-		SplashScreen,
 		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 		DataService
 	],
