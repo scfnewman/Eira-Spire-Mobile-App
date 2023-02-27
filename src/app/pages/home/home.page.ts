@@ -106,5 +106,7 @@ export class HomePage implements OnInit {
 		if(Count % 2 == 0) return 6;
 
 		if(Index == Count - 1) return 12;
+
+		return 12;
 	}
 }
