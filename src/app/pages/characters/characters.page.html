@@ -75,8 +75,6 @@
 						</div>
 					</ion-item>
 				</ion-list>
-				<p class="Description" *ngIf="_Character.Alive" [innerHTML]="_Character.Summary"></p>
-				<p class="Description" *ngIf="!_Character.Alive" [innerHTML]="_Character.DeathStory"></p>
 				<ion-button (click)="PresentCharacterModal(_Character)">Read full bio</ion-button>
 			</div>
 		</ion-slide>
